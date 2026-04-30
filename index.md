@@ -1,5 +1,5 @@
 ---
-layout: workshop      # DON'T CHANGE THIS.
+layout: workshop
 venue: "UC Carpentries (Online)"
 address: "online"
 country: "us"
@@ -10,11 +10,30 @@ humandate: "May 11-20, 2026"
 humantime: "9:00 am - 12:00 pm PT"
 startdate: 2026-05-11
 enddate: 2026-05-20
-instructor: ["Cody Hennesy(UCB)", "Jose Niño Muriel (UCSB)", "Jamie Jamison (UCLA)", "Tim Dennis (UCLA)", "Seth Erickson (UCSB)", "Ryan Horne (UCLA)", "Derek Devnich (UCM), "Reid Otsuji (UCSD)"]
-helper: ["Dave George (UCLA)", "Kristi Liu (UCSB)", "Geno Sanchez (UCLA), "Renee Hui Xin Ng (UCSD)", "Hannah Sutherland (UCLA)", "Geoffery Boushey (UCSF)", "Kat Koziar (Fresno State)"]
-email: ["tdennis@library.ucla.edu"]
-collaborative_notes:  # optional: URL for the workshop collaborative notes
-eventbrite:           # optional: alphanumeric key for Eventbrite registration
+
+instructor:
+  - "Cody Hennesy (UCB)"
+  - "Jose Niño Muriel (UCSB)"
+  - "Jamie Jamison (UCLA)"
+  - "Tim Dennis (UCLA)"
+  - "Seth Erickson (UCSB)"
+  - "Ryan Horne (UCLA)"
+  - "Derek Devnich (UCM)"
+  - "Reid Otsuji (UCSD)"
+
+helper:
+  - "Dave George (UCLA)"
+  - "Kristi Liu (UCSB)"
+  - "Geno Sanchez (UCLA)"
+  - "Renee Hui Xin Ng (UCSD)"
+  - "Hannah Sutherland (UCLA)"
+  - "Geoffery Boushey (UCSF)"
+  - "Kat Koziar (Fresno State)"
+
+email: "tdennis@library.ucla.edu"
+
+collaborative_notes:
+eventbrite:
 ---
 
 {% comment %} See instructions in the comments below for how to edit specific sections of this workshop template. {% endcomment %}
