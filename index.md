@@ -32,7 +32,7 @@ helper:
 
 email: "tdennis@library.ucla.edu"
 
-collaborative_notes:
+collaborative_notes: https://pad.carpentries.org/2026-uc-carpentries
 eventbrite:
 ---
 
