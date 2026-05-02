@@ -29,6 +29,7 @@ helper:
   - "Hannah Sutherland (UCLA)"
   - "Geoffery Boushey (UCSF)"
   - "Kat Koziar (Fresno State)"
+  - "David Palmquist (Fullerton)"
 
 email: "tdennis@library.ucla.edu"
 
