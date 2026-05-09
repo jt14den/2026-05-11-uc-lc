@@ -169,4 +169,37 @@ jupyter lab</code></pre>
     <li>If <code>conda activate carpentries</code> fails, the environment was not created successfully.</li>
     <li>Please use the dataset provided here. It has been modified for teaching purposes and may differ from data.gov.</li>
   </ul>
+
+  <h4>Troubleshooting</h4>
+
+  <ul>
+    <li>
+      <strong><code>conda: command not found</code> after installing Miniforge</strong> —
+      Close your terminal completely and open a new one. On Mac, if the error persists, run
+      <code>conda init zsh</code> (or <code>conda init bash</code> if you use Bash), then open a new terminal window.
+    </li>
+    <li>
+      <strong>Windows: <code>conda</code> not recognized in Command Prompt or PowerShell</strong> —
+      Use <strong>Miniforge Prompt</strong> (installed with Miniforge), not the regular terminal.
+    </li>
+    <li>
+      <strong>Environment creation hangs at "Solving environment..."</strong> —
+      Run <code>conda config --set channel_priority strict</code>, then try creating the environment again.
+    </li>
+    <li>
+      <strong><code>jupyter lab</code> not found</strong> —
+      Make sure you ran <code>conda activate carpentries</code> first. If the problem continues, the environment may not have installed correctly.
+      Remove it with <code>conda env remove -n carpentries</code> and recreate it.
+    </li>
+    <li>
+      <strong>Mac (Apple Silicon)</strong> — Make sure you downloaded the <strong>arm64</strong> Miniforge installer from
+      <a href="https://conda-forge.org/download/">conda-forge.org/download</a>, not the x86_64 version.
+    </li>
+  </ul>
+
+  <p>
+    For additional common setup issues, see the
+    <a href="https://github.com/carpentries/workshop-template/wiki/Configuration-Problems-and-Solutions">Carpentries Configuration Problems and Solutions</a>
+    wiki. Note that some entries there predate Miniforge and may refer to Anaconda — the conda commands are the same.
+  </p>
 </div>
