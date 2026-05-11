@@ -14,8 +14,8 @@ Data + Software Skills for Librarians
 
 ## How We Learn Together
 
-<div class="two-col">
-<div>
+<div class="two-col" markdown="1">
+<div markdown="1">
 
 ### Our Pedagogy
 
@@ -24,7 +24,7 @@ Data + Software Skills for Librarians
 - **No Overload:** A few key concepts, mastery over speed
 
 </div>
-<div>
+<div markdown="1">
 
 ### Managing Expectations
 
@@ -59,8 +59,8 @@ Data + Software Skills for Librarians
 
 We follow [The Carpentries Code of Conduct](https://docs.carpentries.org/topic_folders/policies/code-of-conduct.html). If something feels off, message us privately.
 
-<div class="two-col">
-<div>
+<div class="two-col" markdown="1">
+<div markdown="1">
 
 ### Be Constructive
 
@@ -70,7 +70,7 @@ We follow [The Carpentries Code of Conduct](https://docs.carpentries.org/topic_f
 - Show courtesy and respect toward community members
 
 </div>
-<div>
+<div markdown="1">
 
 ### What Is Not OK
 
