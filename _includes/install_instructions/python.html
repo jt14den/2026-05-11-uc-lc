@@ -112,8 +112,26 @@ jupyter lab</code></pre>
 
       <!-- MAC -->
       <article role="tabpanel" class="tab-pane" id="python-macos">
+
+        <details>
+  <summary><strong>Mac note: Which version to download?</strong></summary>
+  <div class="alert alert-info">
+    <p>Miniforge comes in two versions for Mac:</p>
+    <ul>
+      <li><strong>arm64 (Apple Silicon)</strong> — for Macs with an M1, M2, M3, or M4 chip (most Macs from late 2020 onward)</li>
+      <li><strong>x86_64 (Intel)</strong> — for older Intel Macs</li>
+    </ul>
+    <p>To check: click the Apple menu () &rarr; <strong>About This Mac</strong>. If you see "Apple M1" (or M2, M3, M4), choose <strong>arm64</strong>. If you see "Intel Core i…", choose <strong>x86_64</strong>.</p>
+  </div>
+</details>
+
         <ol>
-          <li>Download and install Miniforge from <a href="https://conda-forge.org/download/">conda-forge.org/download</a>.</li>
+          <li>
+            Download the Miniforge installer for your Mac from
+            <a href="https://conda-forge.org/download/">conda-forge.org/download</a>.
+            You will get a file ending in <code>.sh</code> — this is a shell script, not a regular installer. Do not try to open it by double-clicking.
+          </li>
+
           <li>Create a folder on your Desktop called <code>lc-python</code>.</li>
 
           <li>
@@ -124,17 +142,44 @@ jupyter lab</code></pre>
             and save it in <code>~/Desktop/lc-python</code>.
           </li>
 
-          <li>Open Terminal and run:</li>
+          <li>
+            Open <strong>Terminal</strong>. You can find it in <strong>Applications &rarr; Utilities</strong>, or press
+            <kbd>Command</kbd>+<kbd>Space</kbd> and type <em>Terminal</em>.
+          </li>
+
+          <li>Run the installer by typing the command below and pressing <kbd>Enter</kbd>:</li>
+        </ol>
+
+<pre><code>bash ~/Downloads/Miniforge3*.sh</code></pre>
+
+        <p>Follow the prompts:</p>
+        <ul>
+          <li>Press <kbd>Enter</kbd> or <kbd>Space</kbd> to scroll through the license, then type <code>yes</code> and press <kbd>Enter</kbd> to accept it.</li>
+          <li>Press <kbd>Enter</kbd> to accept the default install location (<code>~/miniforge3</code>).</li>
+          <li>Type <code>yes</code> when asked whether to initialize Miniforge3 — this lets your terminal find <code>conda</code> automatically.</li>
+        </ul>
+
+        <ol start="6">
+          <li>
+            <strong>Close Terminal completely and open a new window.</strong>
+            This is required — conda will not work in the same window where you ran the installer.
+          </li>
+          <li>Verify the install worked:</li>
+        </ol>
+
+<pre><code>conda --version</code></pre>
+
+        <p>You should see something like <code>conda 24.x.x</code>. If you see <code>command not found</code>, see troubleshooting below.</p>
+
+        <ol start="8">
+          <li>Create the workshop environment:</li>
         </ol>
 
 <pre><code>cd ~/Desktop/lc-python
 conda env create -f carpentries_environment.yml</code></pre>
 
-        <ol start="5">
+        <ol start="9">
           <li>Download the <a href="https://librarycarpentry.github.io/lc-python-intro/files/data.zip">data zip file</a> and unzip it inside <code>lc-python</code>.</li>
-        </ol>
-
-        <ol start="6">
           <li>Test setup:</li>
         </ol>
 
@@ -146,25 +191,82 @@ jupyter lab</code></pre>
 
       <!-- LINUX -->
       <article role="tabpanel" class="tab-pane" id="python-linux">
-        <ol>
-          <li>Install Miniforge from <a href="https://conda-forge.org/download/">conda-forge.org/download</a>.</li>
-          <li>Create a folder <code>~/Desktop/lc-python</code>.</li>
 
+        <details>
+  <summary><strong>WSL note: your Downloads folder is in a different place</strong></summary>
+  <div class="alert alert-info">
+    <p>
+      If you are using Windows Subsystem for Linux (WSL), files you download in your Windows browser are not in <code>~/Downloads</code> inside WSL.
+      They are in your Windows user folder, accessible from WSL at:
+    </p>
+    <pre><code>/mnt/c/Users/&lt;your-windows-username&gt;/Downloads/</code></pre>
+    <p>
+      Replace <code>&lt;your-windows-username&gt;</code> with your actual Windows username when running the installer command in step 5 below.
+      We also recommend working from your Linux home directory (<code>~/lc-python</code>) rather than <code>~/Desktop</code>,
+      since the Desktop path in WSL varies by setup.
+    </p>
+  </div>
+</details>
+
+        <ol>
+          <li>
+            Download the Miniforge installer for Linux from
+            <a href="https://conda-forge.org/download/">conda-forge.org/download</a>.
+            You will get a file ending in <code>.sh</code> — this is a shell script you will run in step 4.
+          </li>
+
+          <li>Create a working folder:</li>
+        </ol>
+
+<pre><code>mkdir -p ~/Desktop/lc-python</code></pre>
+
+        <p><em>WSL users: use <code>mkdir -p ~/lc-python</code> instead.</em></p>
+
+        <ol start="3">
           <li>
             Download the
             <a href="https://raw.githubusercontent.com/carpentries/workshop-template/refs/heads/gh-pages/data/carpentries_environment.yml">
               carpentries_environment.yml
             </a>
-            into that folder.
+            and save it in your <code>lc-python</code> folder.
           </li>
 
-          <li>Run:</li>
+          <li>Open a terminal and run the installer:</li>
+        </ol>
+
+<pre><code>bash ~/Downloads/Miniforge3*.sh</code></pre>
+
+        <p><em>WSL users: replace <code>~/Downloads/</code> with <code>/mnt/c/Users/&lt;your-windows-username&gt;/Downloads/</code>.</em></p>
+
+        <p>Follow the prompts:</p>
+        <ul>
+          <li>Press <kbd>Enter</kbd> or <kbd>Space</kbd> to scroll through the license, then type <code>yes</code> and press <kbd>Enter</kbd> to accept it.</li>
+          <li>Press <kbd>Enter</kbd> to accept the default install location (<code>~/miniforge3</code>).</li>
+          <li>Type <code>yes</code> when asked whether to initialize Miniforge3.</li>
+        </ul>
+
+        <ol start="5">
+          <li>
+            <strong>Close your terminal and open a new one.</strong>
+            This is required — conda will not work in the same window where you ran the installer.
+          </li>
+          <li>Verify the install worked:</li>
+        </ol>
+
+<pre><code>conda --version</code></pre>
+
+        <p>You should see something like <code>conda 24.x.x</code>. If you see <code>command not found</code>, run <code>conda init bash</code> (or <code>conda init zsh</code> if you use zsh), then open a new terminal and try again.</p>
+
+        <ol start="7">
+          <li>Create the workshop environment:</li>
         </ol>
 
 <pre><code>cd ~/Desktop/lc-python
 conda env create -f carpentries_environment.yml</code></pre>
 
-        <ol start="5">
+        <p><em>WSL users: replace the path with <code>~/lc-python</code>.</em></p>
+
+        <ol start="8">
           <li>Download and unzip the <a href="https://librarycarpentry.github.io/lc-python-intro/files/data.zip">data zip file</a> into <code>lc-python</code>.</li>
           <li>Test setup:</li>
         </ol>
