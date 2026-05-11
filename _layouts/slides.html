@@ -1,0 +1,137 @@
+---
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }}</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+  <style>
+    :root {
+      --uc-blue:       #1a3a6e;
+      --uc-gold:       #FDB515;
+      --uc-mid-blue:   #1a5592;
+    }
+    .reveal {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 36px;
+      color: #222;
+    }
+    .reveal h1, .reveal h2 {
+      color: var(--uc-blue);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      border-left: 8px solid var(--uc-gold);
+      padding-left: 0.35em;
+      margin-bottom: 0.6em;
+      text-align: left;
+    }
+    .reveal h3 {
+      color: var(--uc-mid-blue);
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: 0.6em;
+      letter-spacing: 0.06em;
+      margin-top: 0.8em;
+      margin-bottom: 0.4em;
+      text-align: left;
+    }
+    .reveal ul {
+      list-style: none;
+      margin-left: 0;
+      text-align: left;
+    }
+    .reveal ul li {
+      position: relative;
+      padding-left: 1.2em;
+      margin-bottom: 0.4em;
+    }
+    .reveal ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.45em;
+      width: 10px;
+      height: 10px;
+      background: var(--uc-gold);
+    }
+    .reveal p {
+      text-align: left;
+    }
+    .reveal blockquote {
+      background: var(--uc-gold);
+      border: none;
+      border-radius: 4px;
+      padding: 0.5em 1em;
+      font-style: normal;
+      font-weight: 700;
+      color: #1a1a1a;
+      width: 90%;
+      box-shadow: none;
+    }
+    .reveal section {
+      text-align: left;
+    }
+    .reveal .progress {
+      color: var(--uc-gold);
+    }
+    .reveal .controls {
+      color: var(--uc-blue);
+    }
+    /* Two-column helper — wrap content in a div.two-col in markdown using HTML */
+    .two-col {
+      display: flex;
+      gap: 2rem;
+      width: 100%;
+    }
+    .two-col > * { flex: 1; }
+    .slide-logo {
+      position: fixed;
+      bottom: 1rem;
+      left: 1.5rem;
+      font-size: 0.5rem;
+      color: #999;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+  <div id="slide-source" style="display:none">{{ content }}</div>
+
+  <div class="reveal">
+    <div class="slides"></div>
+  </div>
+
+  <div class="slide-logo">UC Carpentries &mdash; Library Carpentry Workshop 2026</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+  <script>
+    // Jekyll renders --- as <hr>; split on that to create slides
+    const raw = document.getElementById('slide-source').innerHTML;
+    const chunks = raw.split(/<hr\s*\/?>/i).filter(s => s.trim());
+    const slidesEl = document.querySelector('.slides');
+
+    chunks.forEach(html => {
+      const section = document.createElement('section');
+      section.innerHTML = html;
+      slidesEl.appendChild(section);
+    });
+
+    Reveal.initialize({
+      hash: true,
+      controls: true,
+      progress: true,
+      slideNumber: 'c/t',
+      transition: 'fade',
+      width: 1200,
+      height: 700,
+      margin: 0.08,
+    });
+  </script>
+</body>
+</html>
