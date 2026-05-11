@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Workshop Introduction
+permalink: /introduction/
 ---
 
 <style>

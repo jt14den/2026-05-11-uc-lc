@@ -1,6 +1,7 @@
 ---
 layout: slides
 title: Workshop Introduction Slides
+permalink: /introduction-slides/
 ---
 
 ## UC Library Carpentry Workshop
