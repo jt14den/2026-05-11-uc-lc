@@ -80,3 +80,116 @@ We follow [The Carpentries Code of Conduct](https://docs.carpentries.org/topic_f
 
 </div>
 </div>
+
+---
+
+## Why Git & GitHub?
+
+Day 3 — May 13 | 9:00–10:30 AM PT
+
+---
+
+## The Problem
+
+[![PhD Comics: notFinal.doc](https://phdcomics.com/comics/archive/phd101212s.gif)](https://phdcomics.com/comics/archive.php?comicid=1531)
+
+`report_FINAL.docx` → `report_FINAL2.docx` → `report_USE_THIS_ONE.docx`
+
+> Libraries have always solved this for physical objects. We haven't solved it for digital work.
+
+---
+
+## Git vs. GitHub
+
+<div class="two-col" markdown="1">
+<div markdown="1">
+
+### Git
+
+- Software that runs on your machine
+- Tracks changes to files locally
+- Free and open source
+
+</div>
+<div markdown="1">
+
+### GitHub
+
+- A website that hosts Git repos remotely
+- Adds web interface and collaboration tools
+- Alternatives: GitLab, Bitbucket
+
+</div>
+</div>
+
+**Analogy:** Git is the catalog system. GitHub is the building that houses it.
+
+---
+
+## This Lesson Is on GitHub
+
+- **578 commits** — every edit to every episode tracked, with who changed it and why
+- **69 forks** — other institutions have copied it to adapt for their own workshops
+- You can file a bug report if you find an error. That's a contribution.
+
+[github.com/LibraryCarpentry/lc-git](https://github.com/LibraryCarpentry/lc-git)
+
+---
+
+## Your Library's Software Lives Here
+
+- **FOLIO** — open source ILS, 461 repos on GitHub, community-developed by libraries for libraries
+- **CollectionBuilder** — digital exhibit framework built on GitHub Pages, developed at U of Idaho Library
+- **ArchivesSpace, Omeka, Islandora, DSpace, Blacklight, VuFind** — all open source, all on GitHub
+
+> If your library runs FOLIO or is considering it, this is where that software lives.
+
+---
+
+## CollectionBuilder
+
+Create a digital exhibit from a spreadsheet + folder of images, hosted free on GitHub Pages.
+
+- Maps, timelines, search, tag clouds — generated from your metadata CSV
+- Every change to your exhibit is tracked, reversible, citable
+- Real example: [Idaho Queered](https://www.lib.uidaho.edu/queered/) — LGBTQ+ oral history at U of Idaho Library
+
+> A library-built tool, maintained by librarians, used in production collections.
+
+---
+
+## Not Just for Code
+
+<div class="two-col" markdown="1">
+<div markdown="1">
+
+### Metadata & Cataloging
+
+- Version-control MARC templates, Dublin Core profiles, JSON-LD context files
+- Track changes to controlled vocabularies
+- Use pull requests as a cataloging review workflow
+- Version your OpenRefine GREL scripts
+
+</div>
+<div markdown="1">
+
+### Policy & Admin Docs
+
+- Collection development policies with full change history
+- Procedure manuals: see what changed and why
+- Strategic planning docs shared across committees
+- Any plain text file: Markdown, CSV, YAML, HTML
+
+</div>
+</div>
+
+---
+
+## Supporting Your Researchers
+
+- NSF, NIH, and NEH increasingly require code and data sharing in DMPs
+- **GitHub + Zenodo** — publish a release → automatic DOI → citable software
+- Researchers come to you for help with this
+- Open science means code is a research output. Libraries support research outputs.
+
+> You can be the person who helps them do it well.
