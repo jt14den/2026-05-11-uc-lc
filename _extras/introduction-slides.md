@@ -23,9 +23,12 @@ permalink: /introduction-slides/
 
 **3.** Open a terminal and run:
 
-`git --version`
+```
+$ git --version
+git version 2.39.5 (Apple Git-154)
+```
 
-You should see a version number. Type in chat if not.
+No version number? Type in chat.
 
 </div>
 <div class="qr-col">
