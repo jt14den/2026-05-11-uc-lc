@@ -27,6 +27,8 @@ UC Library Carpentry | 2026-05-13 | 9:00–10:30 AM PT
 
 ## 9:20 AM — Episode 1: What is Git/GitHub? (25 min)
 
+**Slides:** [introduction-slides](https://jt14den.github.io/2026-05-11-uc-lc/introduction-slides/)
+
 **Goal:** Learners understand *why* version control matters before they touch any commands.
 
 ### Talking points
