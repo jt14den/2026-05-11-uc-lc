@@ -6,11 +6,13 @@ permalink: /introduction-slides/
 
 <!-- class: title-slide -->
 
-## <span class="slide-badge">UC Library Carpentry Workshop</span>
+<p class="title-eyebrow">Data + Software Skills for Librarians</p>
 
-Data + Software Skills for Librarians
+## Library Carpentry Workshop
 
-**May 11–20, 2026** | 9:00 am – 12:00 pm PT
+<p class="title-date">May 11–20, 2026 | 9:00 am – 12:00 pm PT</p>
+
+<p><span class="title-url">https://www.tim-dennis.com/2026-05-11-uc-lc/</span></p>
 
 ---
 
@@ -41,6 +43,9 @@ Data + Software Skills for Librarians
 
 ## Zoom Tools & Support
 
+<div class="two-col">
+<div markdown="1">
+
 ### Zoom Etiquette
 
 - 🖐 **Raise Hand** for verbal questions
@@ -54,6 +59,12 @@ Data + Software Skills for Librarians
 - Typing **"I'm stuck"** is a complete sentence
 
 > "Questions help everyone. You are not interrupting."
+
+</div>
+<div style="display:flex;align-items:center;justify-content:center;">
+<img src="{{ '/assets/img/zoom-raise-hand.png' | relative_url }}" alt="Zoom reactions panel with Raise Hand highlighted" style="max-width:100%;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,0.18);">
+</div>
+</div>
 
 ---
 
