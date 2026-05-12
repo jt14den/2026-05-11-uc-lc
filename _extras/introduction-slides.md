@@ -77,10 +77,14 @@ We follow [The Carpentries Code of Conduct](https://docs.carpentries.org/topic_f
 
 ### Be Constructive
 
-- Respect others' time and learning pace
-- Let instructors guide the session flow
-- Maintain inclusive and welcoming language
-- Show courtesy and respect toward community members
+<div class="icon-list" markdown="1">
+
+- ✅ Respect others' time and learning pace
+- ✅ Let instructors guide the session flow
+- ✅ Maintain inclusive and welcoming language
+- ✅ Show courtesy and respect toward community members
+
+</div>
 
 </div>
 <div markdown="1">
@@ -89,9 +93,9 @@ We follow [The Carpentries Code of Conduct](https://docs.carpentries.org/topic_f
 
 <div class="icon-list" markdown="1">
 
-- ✗ Repeatedly interrupting or redirecting
-- ✗ Dominating the discussion or focus
-- ✗ Dismissing others or the core material
+- ❌ Repeatedly interrupting or redirecting
+- ❌ Dominating the discussion or focus
+- ❌ Dismissing others or the core material
 
 </div>
 
