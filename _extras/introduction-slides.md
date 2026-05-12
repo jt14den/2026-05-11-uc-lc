@@ -10,7 +10,7 @@ permalink: /introduction-slides/
 
 <p class="pre-start">We begin at <strong>9:00 AM PT</strong> — get a head start:</p>
 
-<p class="pre-setup-help">🛠 Need setup help? We admitted you early — type in chat and we'll come to you.</p>
+<p class="pre-setup-help">🛠 Need setup help? Type in chat or come on mic — let us know your operating system and we'll help.</p>
 
 <div class="two-col pre-workshop-cols">
 <div markdown="1">
