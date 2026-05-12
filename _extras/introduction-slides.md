@@ -87,9 +87,13 @@ We follow [The Carpentries Code of Conduct](https://docs.carpentries.org/topic_f
 
 ### What Is Not OK
 
-- Repeatedly interrupting or redirecting
-- Dominating the discussion or focus
-- Dismissing others or the core material
+<div class="icon-list" markdown="1">
+
+- ✗ Repeatedly interrupting or redirecting
+- ✗ Dominating the discussion or focus
+- ✗ Dismissing others or the core material
+
+</div>
 
 </div>
 </div>

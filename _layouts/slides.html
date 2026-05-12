@@ -81,6 +81,13 @@
     .reveal .controls {
       color: var(--uc-blue);
     }
+    /* Icon-led lists — suppresses gold square so the emoji/char acts as the bullet */
+    .icon-list li::before {
+      display: none;
+    }
+    .icon-list li {
+      padding-left: 0;
+    }
     /* Two-column helper — wrap content in a div.two-col in markdown using HTML */
     .two-col {
       display: flex;
