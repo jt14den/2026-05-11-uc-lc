@@ -11,7 +11,7 @@ UC Library Carpentry | 2026-05-13 | 9:00–10:30 AM PT
 - Welcome and quick introductions (instructors + helpers)
 - Today's agenda: two episodes before break, then Seth takes GitHub/sharing
 - All work happens in the shell — if you haven't used it before, that's fine, we go slow
-- Point to the workshop page for setup instructions and the collaborative notes link
+- Point to the workshop page for setup instructions and collaborative notes link
 
 ### Setup checks (work through with helpers)
 - `git --version` — should return something; if not, stop and fix now
@@ -31,37 +31,80 @@ UC Library Carpentry | 2026-05-13 | 9:00–10:30 AM PT
 
 **Goal:** Learners understand *why* version control matters before they touch any commands.
 
-### Talking points
+---
 
-**The version control problem**
-- Who has a folder full of `draft_v1`, `draft_FINAL`, `draft_FINAL2`? That's manual version control — and it breaks down fast
-- Git solves this: one file, complete history inside it, no renaming required
-- You can always roll back to any earlier state
+### Slide: The Problem
 
-**What Git gives you**
-- **Versioning** — a rigorous log of every change, who made it, when, and why
-- **Rolling back** — undo bad changes without losing everything else
+- Show the notFinal.doc PhD Comics strip: `report_FINAL.docx` → `report_FINAL2.docx` → `report_USE_THIS_ONE.docx`
+- Libraries have always solved this for physical objects — we haven't solved it for digital work
+
+### What version control gives you (lesson)
 - **Collaboration** — formalized way to work with others without stepping on each other
-- **Backup** — your work lives in multiple places (local + remote)
+- **Versioning** — rigorous change log, no renaming files
+- **Rolling back** — undo bad changes quickly
+- **Understanding** — who changed what, when, and why
+- **Backup** — work lives in multiple places (note: not a primary backup solution)
 
-**Git vs. GitHub — keep these distinct**
-- **Git** is the software — runs on your machine, tracks changes locally, free and open source
-- **GitHub** is a website — hosts Git repositories remotely, adds a web interface, pull requests, etc.
-- Alternatives: GitLab, Bitbucket, Gitee — Git is the engine, GitHub is one garage
+---
 
-**Why librarians specifically?**
-- *Crowdsourcing projects*: Fork an open-licensed project as a template — modify rather than rebuild from scratch
-- *Collaborative metadata editing*: Multiple people editing spreadsheets, tracking conflicts, preserving originals, reviewing changes before re-ingestion
-- Open-access journals, textbooks, and teaching materials are increasingly hosted on GitHub
+### Slide: Git vs. GitHub
 
-### Demo / discussion
-- Show a real GitHub repo (your own or the workshop repo) — point out: commits tab, history, who changed what
-- Optional: show a commit diff so they can see what "tracked changes" looks like
+- **Git** — software, runs on your machine, tracks changes locally, free & open source
+- **GitHub** — website, hosts Git repos remotely, adds web interface and collaboration tools
+- Alternatives: GitLab, Bitbucket
+
+---
+
+### Slide: This Lesson Is on GitHub
+
+- Point to [lc-git](https://github.com/LibraryCarpentry/lc-git): 578 commits, 69 forks
+- Other institutions fork it to adapt for their own workshops
+- Filing a bug report = a contribution — that's open source participation
+
+---
+
+### Slide: Your Library's Software Lives Here
+
+- **FOLIO** — open source ILS, 461 repos on GitHub, community-developed by libraries
+- **CollectionBuilder** — digital exhibit framework built on GitHub Pages, developed at U of Idaho Library
+- ArchivesSpace, Omeka, Islandora, DSpace, Blacklight, VuFind — all open source, all on GitHub
+
+### Slide: CollectionBuilder
+
+- Spreadsheet + folder of images → maps, timelines, search, tag clouds from metadata CSV
+- Every change tracked, reversible, citable
+- Real example: [Idaho Queered](https://www.lib.uidaho.edu/queered/) — LGBTQ+ oral history at U of Idaho Library
+
+---
+
+### Slide: Not Just for Code
+
+**Metadata & Cataloging:**
+- Version-control MARC templates, Dublin Core profiles, JSON-LD context files
+- Track changes to controlled vocabularies
+- Pull requests as a cataloging review workflow
+- Version your OpenRefine GREL scripts
+
+**Policy & Admin Docs:**
+- Collection development policies with full change history
+- Procedure manuals: see what changed and why
+- Strategic planning docs shared across committees
+- Any plain text file: Markdown, CSV, YAML, HTML
+
+---
+
+### Slide: Supporting Your Researchers
+
+- NSF, NIH, and NEH increasingly require code and data sharing in DMPs
+- **GitHub + Zenodo** — publish a release → automatic DOI → citable software
+- Researchers come to you for help with this
+- You can be the person who helps them do it well
+
+---
 
 ### Asides
 - The "why" here is more important than the commands — spend real time on it
-- Whiteboard sketch helps: local machine (Git) ←→ GitHub (remote) — draw the two boxes and the arrows
-- Don't go deep on branching — it's not in this lesson and will confuse people early
+- Don't go deep on branching — not in this lesson, will confuse people early
 
 ---
 
@@ -106,7 +149,7 @@ git config --global init.defaultBranch main
 
 ### Asides
 - `--global` means this applies to all repos on their machine, not just this one
-- Email must match GitHub if they want their commits to show up attributed correctly on GitHub
+- Email must match GitHub if they want commits attributed correctly
 - If someone is on Windows, mention `core.autocrlf` may matter for line endings — note it, don't deep-dive
 
 ---
@@ -132,7 +175,7 @@ Expected output:
 ```
 On branch main
 No commits yet
-nothing to commit (create/copy files and use "git add" to tell Git what to track)
+nothing to commit (create/copy files and use "git add" to track)
 ```
 
 ### Talking points
@@ -141,7 +184,7 @@ nothing to commit (create/copy files and use "git add" to tell Git what to track
 - `git status` is your best friend — run it constantly, we'll use it after every step
 
 ### Asides
-- You can run `ls -a` to show the `.git/` directory exists
+- Run `ls -a` to show the `.git/` directory exists
 - Git does not track anything automatically — you always tell it what to watch
 
 ---
@@ -218,8 +261,6 @@ git log
 
 ### Talking points — the two-stage workflow
 
-Draw the three boxes on the whiteboard (or say it out loud):
-
 ```
 Working directory  →  Staging area (index)  →  Repository (.git)
   (your edits)         git add                   git commit
@@ -230,20 +271,18 @@ Working directory  →  Staging area (index)  →  Repository (.git)
 - The staging area exists so you can be precise — commit only what belongs together
 
 **Commit messages matter:**
-- Write them as an imperative: "Add index.md", not "Added" or "Adding"
-- Future-you will read these. Make them useful.
-- Omit `-m` and Git opens your editor for a longer message — fine for complex commits
+- Write as an imperative: "Add index.md", not "Added" or "Adding"
+- Future-you will read these — make them useful
+- Omit `-m` and Git opens your editor for a longer message
 
 ### Asides
-- Don't use `git commit -a` as a habit — it skips the staging area and can accidentally include things you didn't mean to commit
-- The commit hash is a fingerprint of the exact state of the repo at that moment — you can always get back to any hash
-- If someone accidentally commits the wrong thing, reassure them — we can fix it; nothing is permanent locally
+- Don't use `git commit -a` as a habit — skips the staging area, can include things you didn't mean to commit
+- The commit hash is a fingerprint of the exact state — you can always get back to any hash
+- If someone accidentally commits the wrong thing, reassure them — we can fix it
 
 ---
 
 ### Step 4: Quick Check (5 min, before break)
-
-**Mini-review before handing off:**
 
 ```bash
 git log
@@ -256,14 +295,14 @@ Ask the group:
 - "What's the difference between the working directory and the staging area?"
 
 ### Asides
-- For remote teaching: use collaborative board (Miro, Jamboard) — learners add color-coded notes for each command type, then quiz each other
-- This is a good moment to acknowledge that the two-stage workflow feels weird at first — it clicks after a few sessions
+- For remote teaching: use collaborative board (Miro, Jamboard) — learners add color-coded notes for each command type
+- Good moment to acknowledge: the two-stage workflow feels weird at first — it clicks after a few sessions
 
 ---
 
 ### If Time Allows: git diff and git log options
 
-Only go here if you finish Step 4 early. Skip cleanly if not.
+*(These commands are from later episodes — only go here if you finish Step 4 early and want a preview. Skip cleanly if not.)*
 
 **See what changed before staging:**
 
@@ -277,7 +316,7 @@ Add a second line, save, then:
 git diff
 ```
 
-> Shows what's changed in the working directory vs the last commit. Lines with `+` are new, `-` are removed.
+> Shows what's changed in the working directory vs the last commit. `+` lines are new, `-` lines are removed.
 
 ```bash
 git add index.md
@@ -286,23 +325,17 @@ git diff
 
 > Nothing shown — `git diff` only shows *unstaged* changes. Use `git diff --staged` to see what's in the staging area.
 
-**More log options:**
+**Compact log view:**
 
 ```bash
 git log --oneline
 ```
 
-> Compact view — one line per commit. Useful once history gets long.
-
-```bash
-git log --oneline --graph
-```
-
-> Adds a text branch diagram — more useful later when branching is involved.
+> One line per commit — useful once history gets long.
 
 ### Asides
-- `git diff` is most useful *before* `git add` as a self-check — "did I change what I meant to?"
-- `git log --oneline` is the one to remember; `--graph` is a nice bonus
+- `git diff` is most useful *before* `git add` as a self-check
+- `git log --oneline` is the one to remember
 
 ---
 
