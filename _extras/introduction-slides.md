@@ -4,7 +4,9 @@ title: Workshop Introduction Slides
 permalink: /introduction-slides/
 ---
 
-## UC Library Carpentry Workshop
+<!-- class: title-slide -->
+
+## <span class="slide-badge">UC Library Carpentry Workshop</span>
 
 Data + Software Skills for Librarians
 
