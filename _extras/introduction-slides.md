@@ -19,7 +19,7 @@ permalink: /introduction-slides/
 
 **2.** Take the pre-workshop survey
 
-<span class="pre-url">in the shared notes ↗</span>
+<span class="pre-url">in the shared notes 👆</span>
 
 **3.** Open a terminal and run:
 
