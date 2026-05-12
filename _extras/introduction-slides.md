@@ -4,6 +4,44 @@ title: Workshop Introduction Slides
 permalink: /introduction-slides/
 ---
 
+<!-- class: pre-workshop -->
+
+## While You Wait
+
+<p class="pre-start">We begin at <strong>9:00 AM PT</strong> — get a head start:</p>
+
+<div class="two-col pre-workshop-cols">
+<div markdown="1">
+
+**1.** Sign into shared notes
+
+<span class="pre-url">pad.carpentries.org/uc2026-lc-git</span>
+
+**2.** Take the pre-workshop survey
+
+<span class="pre-url">in the shared notes ↗</span>
+
+**3.** Open a terminal and run:
+
+`git --version`
+
+You should see a version number. Type in chat if not.
+
+</div>
+<div class="qr-col">
+  <div class="qr-item">
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&color=1a3a6e&data=https://pad.carpentries.org/uc2026-lc-git" alt="QR: shared notes">
+    <p>Shared notes</p>
+  </div>
+  <div class="qr-item">
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&color=1a3a6e&data=https://carpentries.typeform.com/to/wi32rS?slug=2026-05-11-uc-lc" alt="QR: pre-workshop survey">
+    <p>Pre-workshop survey</p>
+  </div>
+</div>
+</div>
+
+---
+
 <!-- class: title-slide -->
 
 <p class="title-eyebrow">Data + Software Skills for Librarians</p>

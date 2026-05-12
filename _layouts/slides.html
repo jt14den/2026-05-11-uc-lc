@@ -81,6 +81,64 @@
     .reveal .controls {
       color: var(--uc-blue);
     }
+    /* === Pre-workshop "While You Wait" slide === */
+    .reveal section.pre-workshop {
+      background: #f4f7fb;
+    }
+    .reveal section.pre-workshop h2 {
+      font-size: 1.5em;
+      margin-bottom: 0.2em;
+    }
+    .pre-start {
+      font-size: 0.5em !important;
+      color: #555;
+      margin-bottom: 1em !important;
+    }
+    .pre-workshop-cols {
+      align-items: flex-start;
+    }
+    .pre-workshop-cols > div:first-child p,
+    .pre-workshop-cols > div:first-child strong {
+      font-size: 0.6em;
+      line-height: 1.9;
+    }
+    .pre-workshop-cols > div:first-child code {
+      font-size: 0.8em;
+    }
+    .pre-url {
+      display: inline-block;
+      font-family: 'Courier New', monospace;
+      font-size: 0.75em;
+      color: var(--uc-mid-blue);
+      font-weight: 600;
+    }
+    .qr-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.2rem;
+      flex: 0 0 auto;
+      width: 200px;
+    }
+    .qr-item {
+      text-align: center;
+    }
+    .qr-item img {
+      display: block;
+      margin: 0 auto 0.3em;
+      border: 3px solid var(--uc-blue);
+      border-radius: 6px;
+    }
+    .qr-item p {
+      font-size: 0.38em !important;
+      color: #555;
+      text-align: center !important;
+      margin: 0 !important;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
     /* Icon-led lists — suppresses gold square so the emoji/char acts as the bullet */
     .icon-list li::before {
       display: none;
