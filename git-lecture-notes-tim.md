@@ -96,9 +96,10 @@ git config --global init.defaultBranch main
 - Matches GitHub's default so everything stays in sync
 
 **Walk through Nano controls now.** Don't assume they know it:
-- `Ctrl+O` then `Enter` to save
+- `Ctrl+O` then `Enter` to save — think "Write **O**ut"
 - `Ctrl+X` to exit
 - Or: `Ctrl+X` → `Y` → `Enter` (save-and-exit in one flow)
+- Say it once out loud: "Write Out to save, then Exit to leave."
 
 ### Asides
 - `--global` means this applies to all repos on their machine, not just this one
@@ -177,6 +178,7 @@ git status
 - Two things now: the staged (empty) version AND the modified-but-unstaged version
 - This is the key moment. Staging only captured what you `add`ed, not the edit you just made.
 - The same file shows up in both sections. This surprises people, so pause here.
+- Explain it directly: "Git staged the empty file. Then you edited it. Those are two different states — Git is showing you both."
 
 **Stage the updated version:**
 
@@ -203,6 +205,16 @@ git commit -m 'Add index.md'
 git log
 ```
 
+Output looks like this:
+
+```
+commit a1b2c3d4e5f6... (HEAD -> main)
+Author: Your Name <yourname@domain.name>
+Date:   Wed May 13 09:45:00 2026 -0700
+
+    Add index.md
+```
+
 - Shows commit hash, author, timestamp, message
 - Every commit is permanent and addressable by its hash
 - Commits are ordered into sequences called **branches**. Each one points back to the commit before it.
@@ -225,11 +237,12 @@ flowchart LR
 - `git commit` *actually takes* the snapshot: permanent, with metadata
 - The staging area lets you be precise. Commit only what belongs together.
 - This two-stage process gives you fine-grained control over what goes into each commit
+- **Why bother with two steps?** It lets you commit part of your changes — say, two edited files out of five — without committing everything at once. You choose what groups together logically.
 
 **Photography metaphor** (it's in the lesson, use it):
 - `git add` = choosing who stands in the photo
 - `git commit` = pressing the shutter
-- `git commit -a` = grabbing everyone without checking. Someone might walk in with unfinished makeup.
+- `git commit -a` = grabbing everyone and pressing the shutter without looking first
 
 **Commit messages matter:**
 - Write as an **imperative**: "Add index.md", not "Added" or "Adding"
