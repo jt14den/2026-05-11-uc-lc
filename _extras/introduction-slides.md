@@ -8,9 +8,9 @@ permalink: /introduction-slides/
 
 ## While You Wait
 
-<p class="pre-start">We begin at <strong>9:00 AM PT</strong> — get a head start:</p>
+<p class="pre-start">We begin at <strong>9:00 AM PT</strong>. Get a head start:</p>
 
-<p class="pre-setup-help">🛠 Need setup help? Type in chat or come on mic — let us know your operating system and we'll help.</p>
+<p class="pre-setup-help">🛠 Need setup help? Type in chat or come on mic: let us know your operating system and we'll help.</p>
 
 <div class="two-col pre-workshop-cols">
 <div markdown="1">
@@ -149,17 +149,36 @@ We follow [The Carpentries Code of Conduct](https://docs.carpentries.org/topic_f
 
 ## Why Git & GitHub?
 
-Day 3 — May 13 | 9:00–10:30 AM PT
+Day 3: May 13 | 9:00–10:30 AM PT
 
 ---
 
 ## The Problem
 
+<div class="two-col">
+<div markdown="1">
+
 [![PhD Comics: notFinal.doc](https://phdcomics.com/comics/archive/phd101212s.gif)](https://phdcomics.com/comics/archive.php?comicid=1531)
 
-`report_FINAL.docx` → `report_FINAL2.docx` → `report_USE_THIS_ONE.docx`
+</div>
+<div markdown="1">
+
+[![XKCD: Documents](https://imgs.xkcd.com/comics/documents.png)](https://xkcd.com/1459/)
+
+</div>
+</div>
 
 > Libraries have always solved this for physical objects. We haven't solved it for digital work.
+
+---
+
+## What Version Control Gives You
+
+- Versioning: one file, complete history, no `report_FINAL2.docx`
+- Rolling back: undo changes when something breaks
+- Collaboration: merge edits from different people without emailing files
+- Understanding: see who changed what, when, and why
+- Backup: your work isn't stuck on one machine
 
 ---
 
@@ -186,14 +205,14 @@ Day 3 — May 13 | 9:00–10:30 AM PT
 </div>
 </div>
 
-**Analogy:** Git is the catalog system. GitHub is the building that houses it.
+**Analogy:** Git is cataloging practice: your local workflow. GitHub is WorldCat: where you publish records so others can find and contribute.
 
 ---
 
 ## This Lesson Is on GitHub
 
-- **578 commits** — every edit to every episode tracked, with who changed it and why
-- **69 forks** — other institutions have copied it to adapt for their own workshops
+- **578 commits**: every edit to every episode tracked, with who changed it and why
+- **69 forks**: other institutions have copied it to adapt for their own workshops
 - You can file a bug report if you find an error. That's a contribution.
 
 [github.com/LibraryCarpentry/lc-git](https://github.com/LibraryCarpentry/lc-git)
@@ -202,9 +221,9 @@ Day 3 — May 13 | 9:00–10:30 AM PT
 
 ## Your Library's Software Lives Here
 
-- **FOLIO** — open source ILS, 461 repos on GitHub, community-developed by libraries for libraries
-- **CollectionBuilder** — digital exhibit framework built on GitHub Pages, developed at U of Idaho Library
-- **ArchivesSpace, Omeka, Islandora, DSpace, Blacklight, VuFind** — all open source, all on GitHub
+- **FOLIO**: open source ILS, 461 repos on GitHub, community-developed by libraries for libraries
+- **CollectionBuilder**: digital exhibit framework built on GitHub Pages, developed at U of Idaho Library
+- **ArchivesSpace, Omeka, Islandora, DSpace, Blacklight, VuFind**: all open source, all on GitHub
 
 > If your library runs FOLIO or is considering it, this is where that software lives.
 
@@ -214,9 +233,9 @@ Day 3 — May 13 | 9:00–10:30 AM PT
 
 Create a digital exhibit from a spreadsheet + folder of images, hosted free on GitHub Pages.
 
-- Maps, timelines, search, tag clouds — generated from your metadata CSV
+- Maps, timelines, search, tag clouds: generated from your metadata CSV
 - Every change to your exhibit is tracked, reversible, citable
-- Real example: [Idaho Queered](https://www.lib.uidaho.edu/queered/) — LGBTQ+ oral history at U of Idaho Library
+- Real example: [Idaho Queered](https://www.lib.uidaho.edu/queered/), LGBTQ+ oral history at U of Idaho Library
 
 > A library-built tool, maintained by librarians, used in production collections.
 
@@ -252,8 +271,52 @@ Create a digital exhibit from a spreadsheet + folder of images, hosted free on G
 ## Supporting Your Researchers
 
 - NSF, NIH, and NEH increasingly require code and data sharing in DMPs
-- **GitHub + Zenodo** — publish a release → automatic DOI → citable software
+- **GitHub + Zenodo**: publish a release → automatic DOI → citable software
 - Researchers come to you for help with this
 - Open science means code is a research output. Libraries support research outputs.
 
 > You can be the person who helps them do it well.
+
+---
+
+## Before We Open a Terminal
+
+What files in your work do you wish you had a complete history for?
+
+*(Type in chat or unmute, 2 minutes)*
+
+---
+
+## To the Terminal
+
+<div class="two-col">
+<div markdown="1">
+
+### Mac
+
+1. Press **Cmd + Space** to open Spotlight
+2. Type **Terminal** and press Enter
+
+*Or:* Applications → Utilities → Terminal
+
+</div>
+<div markdown="1">
+
+### Windows
+
+1. Open the **Start Menu**
+2. Search for **Git Bash**
+3. Click to open
+
+*Not Git Bash? Let us know in chat.*
+
+</div>
+</div>
+
+Once it's open, type:
+
+```
+git --version
+```
+
+You should see a version number. If you get an error, let us know now.
