@@ -348,3 +348,32 @@ Register or share the workshop page:
   <p style="font-size:0.4em;color:#555;text-align:center;margin:0;">Workshop page &amp; registration</p>
 </div>
 </div>
+
+---
+
+## The Two-Stage Workflow
+
+<div style="display:flex;align-items:center;justify-content:center;gap:1.4rem;margin-top:2.5rem;">
+  <div style="background:#f4f7fb;border:3px solid #1a3a6e;border-radius:8px;padding:0.9em 1.4em;text-align:center;min-width:170px;">
+    <strong style="display:block;color:#1a3a6e;font-size:0.55em;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.3em;">Working Directory</strong>
+    <span style="font-size:0.42em;color:#555;">your edits</span>
+  </div>
+  <div style="text-align:center;flex:0 0 auto;">
+    <div style="font-size:1.4em;color:#1a3a6e;line-height:1;">&#8594;</div>
+    <code style="font-size:0.38em;background:#FDB515;padding:0.25em 0.55em;border-radius:4px;color:#111;font-weight:700;">git add</code>
+  </div>
+  <div style="background:#f4f7fb;border:3px solid #1a3a6e;border-radius:8px;padding:0.9em 1.4em;text-align:center;min-width:170px;">
+    <strong style="display:block;color:#1a3a6e;font-size:0.55em;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.3em;">Staging Area</strong>
+    <span style="font-size:0.42em;color:#555;">(index)</span>
+  </div>
+  <div style="text-align:center;flex:0 0 auto;">
+    <div style="font-size:1.4em;color:#1a3a6e;line-height:1;">&#8594;</div>
+    <code style="font-size:0.38em;background:#FDB515;padding:0.25em 0.55em;border-radius:4px;color:#111;font-weight:700;">git commit</code>
+  </div>
+  <div style="background:#1a3a6e;border:3px solid #1a3a6e;border-radius:8px;padding:0.9em 1.4em;text-align:center;min-width:170px;">
+    <strong style="display:block;color:#FDB515;font-size:0.55em;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:0.3em;">Repository</strong>
+    <span style="font-size:0.42em;color:#adc4e0;">(.git)</span>
+  </div>
+</div>
+
+> `git add` = choose what goes in. `git commit` = take the snapshot.

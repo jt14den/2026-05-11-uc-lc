@@ -210,9 +210,15 @@ git log
 
 ### Talking points: the two-stage workflow
 
-```
-Working directory  →  Staging area (index)  →  Repository (.git)
-  (your edits)         git add                   git commit
+```mermaid
+flowchart LR
+    WD["Working Directory\nyour edits"]
+    SA["Staging Area\n(index)"]
+    REPO["Repository\n(.git)"]
+
+    WD -->|git add| SA
+    SA -->|git commit| REPO
+    REPO -.->|"git checkout / restore"| WD
 ```
 
 - `git add` specifies *what* will go in the next snapshot, putting things in the staging area
