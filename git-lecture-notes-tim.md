@@ -10,18 +10,18 @@ UC Library Carpentry | 2026-05-13 | 9:00–10:30 AM PT
 ### Talking points
 - Welcome and quick introductions (instructors + helpers)
 - Today's agenda: two episodes before break, then Seth takes GitHub/sharing
-- All work happens in the **shell** — if you haven't used it before, that's fine, we go slow
+- All work happens in the **shell**. If you haven't used it before, that's fine, we go slow.
 - Point to the **workshop page** for setup instructions and collaborative notes link
 
 ### Setup checks (work through with helpers)
-- `git --version` — should return something; if not, stop and fix now
-- **GitHub account** created? Confirm username is set (remind them: **usernames and emails are publicly visible by default**)
-- **Network?** Confirm everyone can reach github.com
+- `git --version` should return something; if not, stop and fix now
+- **GitHub account** created? Confirm username is set (remind them: usernames and emails are publicly visible by default)
+- Can everyone reach github.com?
 - **Text editor** configured? We'll set this in Episode 2 but flag it now
 
 ### Asides
 - Helpers: circulate during setup check, don't wait for people to raise their hand
-- If someone is on Windows and has line-ending issues later, flag `core.autocrlf` — we'll address it when it comes up
+- If someone is on Windows and has line-ending issues later, flag `core.autocrlf`. We'll address it when it comes up.
 
 ---
 
@@ -31,11 +31,11 @@ UC Library Carpentry | 2026-05-13 | 9:00–10:30 AM PT
 
 **Goal:** Learners understand *why* version control matters before they touch any commands.
 
-Follow the slide deck — it covers the problem, version control benefits, Git vs. GitHub, and library use cases.
+Follow the slide deck. It covers the problem, version control benefits, Git vs. GitHub, and library use cases.
 
 ### Asides
-- The **"why"** here is more important than the commands — spend real time on it
-- Don't go deep on **branching** — not in this lesson, will confuse people early
+- The "why" is more important than the commands. Spend real time on it.
+- Don't go deep on branching. Not in this lesson, and it'll confuse people early.
 
 ### Segue to the Terminal
 
@@ -43,59 +43,73 @@ Follow the slide deck — it covers the problem, version control benefits, Git v
 
 > "That's exactly what we're going to fix today. Let's open a terminal and start building that history."
 
-Walk through the "To the Terminal" slide. Wait for everyone to confirm `git --version` works before moving on — anyone with a problem surfaces here, not mid-command.
+Walk through the "To the Terminal" slide. Wait for everyone to confirm `git --version` works before moving on. Anyone with a problem should surface here, not mid-command.
 
 ---
 
 ## 9:45 AM — Episode 2: Getting Started (init, add, commit) (45 min)
 
-**Goal:** Learners create a repo, stage a file, and make their first commit. They understand the **two-stage workflow**.
+**Goal:** Learners create a repo, stage a file, and make their first commit. They understand the two-stage workflow.
+
+Worth saying upfront: the biggest barrier to Git is usually just the **terminology**. Commands follow the pattern `git verb options`: verb is the action, options are detail. Once you see the pattern, it clicks.
 
 ---
 
 ### Step 1: Configure Git (5 min)
 
-**Show first — then have them follow along.**
+**Show first, then have them follow along.**
 
 ```bash
 git config --list
 ```
 
-- Check what's **already set** — many will have something, some will have nothing
+- Check what's already set. Many will have something; some will have nothing.
 - Look for `user.name` and `user.email` in the output
+- Output varies by OS: Mac shows credential helpers, Windows shows LFS/SSL settings, Linux may show nothing
 
-Set **identity** (must match GitHub email for contributions to be credited):
+Set your **identity** (email must match your GitHub account):
 
 ```bash
 git config --global user.name "Your Name"
 git config --global user.email "yourname@domain.name"
 ```
 
-Set **text editor** (Nano — easiest for beginners):
+- Same email you used to sign up for GitHub
+- If they don't match, commits won't be attributed to your account
+
+Set your **text editor** to Nano, easiest for beginners:
 
 ```bash
 git config --global core.editor "nano -w"
 ```
 
-Set **default branch name**:
+- Nano works on Mac, Windows, and Linux
+- Runs right in the shell, no separate window
+- On-screen shortcuts are always visible at the bottom
+
+Set the **default branch name**:
 
 ```bash
 git config --global init.defaultBranch main
 ```
 
-**Walk through Nano controls now** — don't assume they know it:
+- Matches GitHub's default so everything stays in sync
+
+**Walk through Nano controls now.** Don't assume they know it:
 - `Ctrl+O` then `Enter` to save
 - `Ctrl+X` to exit
 - Or: `Ctrl+X` → `Y` → `Enter` (save-and-exit in one flow)
 
 ### Asides
-- `--global` means this applies to **all repos** on their machine, not just this one
-- Email must match GitHub if they want commits **attributed correctly**
-- If someone is on Windows, mention `core.autocrlf` may matter for line endings — note it, don't deep-dive
+- `--global` means this applies to all repos on their machine, not just this one
+- Email must match GitHub for commits to be attributed correctly
+- If someone is on Windows, mention `core.autocrlf` may matter for line endings. Note it, don't deep-dive.
 
 ---
 
 ### Step 2: Create a Repository (5 min)
+
+A **repository** is a data structure used to track changes to a set of project files over time. It lives as a hidden `.git/` folder inside your project.
 
 ```bash
 mkdir hello-world
@@ -103,19 +117,20 @@ cd hello-world
 git init
 ```
 
-- Git creates a **hidden `.git/` folder** — that *is* the repository
-- Everything Git knows about this project lives in `.git/` — don't delete it
+- Git creates a hidden `.git/` folder. That *is* the repository.
+- Everything Git knows about this project lives in `.git/`. Don't delete it.
 
 ```bash
 git status
 ```
 
-- Shows **branch**, **commit status**, and **what's tracked**
-- `git status` is your best friend — run it constantly, we'll use it after every step
+- Shows branch, commit status, and what's tracked
+- `git status` is your best friend. Run it constantly, we'll use it after every step.
 
 ### Asides
-- Run `ls -a` to show the `.git/` directory exists
-- Git does **not** track anything automatically — you always tell it what to watch
+- Run `ls -a` to show the `.git/` directory exists. "Hidden" just means the name starts with a dot.
+- Flags like `-a` are command line options you can add to shell commands to change their behavior
+- Git does not track anything automatically. You always tell it what to watch.
 
 ---
 
@@ -130,7 +145,9 @@ touch index.md
 git status
 ```
 
-- Git sees an **untracked** file — it knows the file exists but isn't tracking it yet
+- Git sees an **untracked** file. It knows it exists but isn't watching it.
+- `.md` is **Markdown**, a lightweight plain-text format
+- The filename shows up in **red**: untracked or unstaged
 
 **Stage the file:**
 
@@ -139,7 +156,8 @@ git add index.md
 git status
 ```
 
-- File moves to the **staging area** — shows as "Changes to be committed"
+- File moves to the **staging area**. Shows as "Changes to be committed".
+- The filename is now **green**: staged and ready to commit
 
 **Edit the file:**
 
@@ -147,7 +165,7 @@ git status
 nano -w index.md
 ```
 
-- Add something simple: `# Hello, world!`
+- Add something simple: `# Hello, world!` (the `#` makes it a Markdown header)
 - Save and exit (`Ctrl+O`, `Enter`, `Ctrl+X`)
 
 **Check status again:**
@@ -156,8 +174,9 @@ nano -w index.md
 git status
 ```
 
-- Two things now: the **staged** (empty) file AND the **modified but unstaged** version
-- This is the key moment — the staging area only has what you `add`ed, not the edit you just made
+- Two things now: the staged (empty) version AND the modified-but-unstaged version
+- This is the key moment. Staging only captured what you `add`ed, not the edit you just made.
+- The same file shows up in both sections. This surprises people, so pause here.
 
 **Stage the updated version:**
 
@@ -166,7 +185,7 @@ git add index.md
 git status
 ```
 
-- Both changes are now in the **staging area**, ready to commit
+- Both changes are now in the staging area, ready to commit
 
 **Commit:**
 
@@ -176,6 +195,7 @@ git commit -m 'Add index.md'
 
 - Git records a **permanent snapshot** with metadata: who, when, message
 - The **commit hash** in the output is a fingerprint of this exact state
+- Commit messages should be short and specific. Future-you will read them.
 
 **View history:**
 
@@ -183,29 +203,41 @@ git commit -m 'Add index.md'
 git log
 ```
 
-- Shows **commit hash**, author, timestamp, message
-- Every commit is permanent and addressable by hash
+- Shows commit hash, author, timestamp, message
+- Every commit is permanent and addressable by its hash
+- Commits are ordered into sequences called **branches**. Each one points back to the commit before it.
+- Over time this builds a mini-history of your process: who changed what, when, and why
 
-### Talking points — the two-stage workflow
+### Talking points: the two-stage workflow
 
 ```
 Working directory  →  Staging area (index)  →  Repository (.git)
   (your edits)         git add                   git commit
 ```
 
-- **`git add`** says "include this in the next snapshot"
-- **`git commit`** takes the actual snapshot — permanent, with metadata (who, when, message)
-- The **staging area** exists so you can be precise — commit only what belongs together
+- `git add` specifies *what* will go in the next snapshot, putting things in the staging area
+- `git commit` *actually takes* the snapshot: permanent, with metadata
+- The staging area lets you be precise. Commit only what belongs together.
+- This two-stage process gives you fine-grained control over what goes into each commit
+
+**Photography metaphor** (it's in the lesson, use it):
+- `git add` = choosing who stands in the photo
+- `git commit` = pressing the shutter
+- `git commit -a` = grabbing everyone without checking. Someone might walk in with unfinished makeup.
 
 **Commit messages matter:**
 - Write as an **imperative**: "Add index.md", not "Added" or "Adding"
-- Future-you will read these — make them useful
-- Omit `-m` and Git opens your **editor** for a longer message
+- Future-you will read these. Make them useful.
+- Omit `-m` and Git opens your editor for a longer message
+
+**Reference the staging area diagram** at the bottom of the lesson:
+https://librarycarpentry.github.io/lc-git/02-getting-started.html
+Show it if the lesson is open, or sketch the three boxes on screen.
 
 ### Asides
-- Don't use `git commit -a` as a habit — skips the staging area, can include things you didn't mean to commit
-- The **commit hash** is a fingerprint of the exact state — you can always get back to any hash
-- If someone accidentally commits the wrong thing, reassure them — we can fix it
+- Don't use `git commit -a` as a habit. It skips the staging area and can pull in things you didn't mean to commit.
+- The commit hash is a fingerprint of the exact state. You can always get back to any hash.
+- If someone accidentally commits the wrong thing, reassure them. We can fix it.
 
 ---
 
@@ -217,19 +249,24 @@ git status
 ```
 
 Ask the group:
-- "What does **`git add`** do?"
-- "What does **`git commit`** do?"
-- "What's the difference between the **working directory** and the **staging area**?"
+- "What does `git add` do?"
+- "What does `git commit` do?"
+- "What's the difference between the working directory and the staging area?"
+
+**Segue to Seth:**
+- Everything so far is local. It only exists on your machine.
+- If you wanted to work with someone else, they'd have no way to see any of this.
+- That's what Episode 3 fixes: sharing your work on GitHub.
 
 ### Asides
-- For remote teaching: use collaborative board (Miro, Jamboard) — learners add color-coded notes for each command type
-- Good moment to acknowledge: the **two-stage workflow** feels weird at first — it clicks after a few sessions
+- For remote teaching: use a collaborative board (Miro, Jamboard). Learners add color-coded notes for each command type.
+- Good moment to say: the two-stage workflow feels weird at first. It clicks after a few sessions.
 
 ---
 
 ### If Time Allows: git diff and git log options
 
-*(Commands from later episodes — only go here if you finish Step 4 early. Skip cleanly if not.)*
+*(Commands from later episodes. Only go here if you finish Step 4 early. Skip cleanly if not.)*
 
 **See what changed before staging:**
 
@@ -243,7 +280,7 @@ nano -w index.md
 git diff
 ```
 
-- Shows what's changed in the **working directory** vs the last commit
+- Shows what's changed in the working directory vs the last commit
 - `+` lines are new, `-` lines are removed
 
 ```bash
@@ -251,8 +288,8 @@ git add index.md
 git diff
 ```
 
-- Nothing shown — `git diff` only shows **unstaged** changes
-- Use `git diff --staged` to see what's in the **staging area**
+- Nothing shown. `git diff` only shows unstaged changes.
+- Use `git diff --staged` to see what's in the staging area
 
 **Compact log view:**
 
@@ -260,8 +297,8 @@ git diff
 git log --oneline
 ```
 
-- One line per commit — useful once history gets long
-- The one **log flag** to remember
+- One line per commit. Useful once history gets long.
+- The one log flag worth remembering
 
 ### Asides
 - `git diff` is most useful *before* `git add` as a self-check
@@ -273,7 +310,7 @@ git log --oneline
 
 Remind learners:
 - Back at **10:40**
-- **Seth** will take over for GitHub/sharing (Episode 3)
+- **Seth** takes over for GitHub/sharing (Episode 3)
 - Leave terminal open, stay in `hello-world/` directory
 
 ---

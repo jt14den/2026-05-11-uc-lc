@@ -42,6 +42,10 @@ No version number? Type in chat.
     <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&color=1a3a6e&data=https://carpentries.typeform.com/to/wi32rS?slug=2026-05-11-uc-lc" alt="QR: pre-workshop survey">
     <p>Pre-workshop survey</p>
   </div>
+  <div class="qr-item">
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&color=1a3a6e&data=https://www.tim-dennis.com/2026-05-11-uc-lc/" alt="QR: workshop website">
+    <p>Workshop website</p>
+  </div>
 </div>
 </div>
 
@@ -221,15 +225,15 @@ Day 3: May 13 | 9:00–10:30 AM PT
 
 ## Your Library's Software Lives Here
 
-- **FOLIO**: open source ILS, 461 repos on GitHub, community-developed by libraries for libraries
-- **CollectionBuilder**: digital exhibit framework built on GitHub Pages, developed at U of Idaho Library
-- **ArchivesSpace, Omeka, Islandora, DSpace, Blacklight, VuFind**: all open source, all on GitHub
+- **[FOLIO](https://www.folio.org)**: open source ILS, 461 repos on GitHub, community-developed by libraries for libraries
+- **[CollectionBuilder](https://collectionbuilder.github.io)**: digital exhibit framework built on GitHub Pages, developed at U of Idaho Library
+- **[ArchivesSpace](https://archivesspace.org), [Omeka](https://omeka.org), [Islandora](https://www.islandora.ca), [DSpace](https://dspace.lyrasis.org), [Blacklight](https://projectblacklight.org), [VuFind](https://vufind.org)**: all open source, all on GitHub
 
 > If your library runs FOLIO or is considering it, this is where that software lives.
 
 ---
 
-## CollectionBuilder
+## [CollectionBuilder](https://collectionbuilder.github.io)
 
 Create a digital exhibit from a spreadsheet + folder of images, hosted free on GitHub Pages.
 
@@ -251,7 +255,7 @@ Create a digital exhibit from a spreadsheet + folder of images, hosted free on G
 - Version-control MARC templates, Dublin Core profiles, JSON-LD context files
 - Track changes to controlled vocabularies
 - Use pull requests as a cataloging review workflow
-- Version your OpenRefine GREL scripts
+- Version your [OpenRefine](https://openrefine.org) GREL scripts
 
 </div>
 <div markdown="1">
@@ -271,7 +275,7 @@ Create a digital exhibit from a spreadsheet + folder of images, hosted free on G
 ## Supporting Your Researchers
 
 - NSF, NIH, and NEH increasingly require code and data sharing in DMPs
-- **GitHub + Zenodo**: publish a release → automatic DOI → citable software
+- **GitHub + [Zenodo](https://zenodo.org)**: publish a release → automatic DOI → citable software
 - Researchers come to you for help with this
 - Open science means code is a research output. Libraries support research outputs.
 
@@ -320,3 +324,27 @@ git --version
 ```
 
 You should see a version number. If you get an error, let us know now.
+
+---
+
+## Join the Remaining Sessions
+
+<div class="two-col" style="align-items:center;">
+<div markdown="1">
+
+### Coming Up
+
+- **Day 4 — May 18:** OpenRefine for Data Cleaning
+- **Day 5 — May 19:** Python 1: Variables, Lists & Pandas
+- **Day 6 — May 20:** Python 2: Advanced Pandas & Visualization
+
+Register or share the workshop page:
+
+**tim-dennis.com/2026-05-11-uc-lc**
+
+</div>
+<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.5rem;">
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&color=1a3a6e&data=https://www.tim-dennis.com/2026-05-11-uc-lc/" alt="QR code: workshop registration page" style="border:3px solid #1a3a6e;border-radius:6px;">
+  <p style="font-size:0.4em;color:#555;text-align:center;margin:0;">Workshop page &amp; registration</p>
+</div>
+</div>

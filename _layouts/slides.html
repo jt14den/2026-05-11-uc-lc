@@ -191,6 +191,25 @@
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       letter-spacing: -0.01em;
     }
+    .slide-footer {
+      position: fixed;
+      bottom: 0.6rem;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 1.5rem;
+      font-size: 0.55rem;
+      color: #888;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      z-index: 100;
+      pointer-events: none;
+    }
+    .slide-footer a {
+      color: var(--uc-mid-blue);
+      text-decoration: none;
+      pointer-events: all;
+    }
     /* Badge utility — use <span class="slide-badge"> in slide markdown */
     .reveal .slide-badge {
       display: inline-block;
@@ -280,6 +299,11 @@
   <div class="uc-logo">
     <span class="uc-logo-badge">UC</span>
     <span class="uc-logo-name">Carpentries</span>
+  </div>
+
+  <div class="slide-footer">
+    <span>Library Carpentry: Git &amp; GitHub | May 13, 2026</span>
+    <span><a href="https://www.tim-dennis.com/2026-05-11-uc-lc/">tim-dennis.com/2026-05-11-uc-lc</a></span>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
