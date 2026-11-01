@@ -2,326 +2,307 @@
   <h3>Python</h3>
 
   <p>
-    <a href="https://python.org">Python</a> is a popular language for research computing.
-    We will use Python through <a href="https://jupyter.org/">JupyterLab</a>, which runs in a web browser.
+    We will use <a href="https://python.org/">Python</a> to write and run code, and
+    <a href="https://jupyter.org/">JupyterLab</a> as our workspace.
+    JupyterLab opens in a web browser but runs on your computer.
   </p>
-
   <p>
-    To make setup easier, we recommend installing Python using
-    <a href="https://conda-forge.org/download/">Miniforge</a>.
-    This will also install JupyterLab and the packages we need for the workshop.
+    We recommend <a href="https://conda-forge.org/download/">Miniforge</a> for installation.
+    <strong>Miniforge includes Python. You do not need to download Python separately.</strong>
+    It also includes <code>conda</code>, a tool for installing software and keeping
+    project software in separate environments. In the steps below, you will create
+    a workshop environment called <code>carpentries</code>. This step installs
+    JupyterLab and the Python packages used in the lesson.
   </p>
-
   <p>
-    Please complete the steps below before the workshop. If you get stuck, stop and we will help you during the session.
+    Complete setup before the workshop if you can. If a step fails, stop there and
+    contact the workshop organizers. Save the error message or take a screenshot
+    so we can help. If your computer requires IT approval to install software,
+    request that approval before the workshop.
   </p>
 
   <h4>Before you begin</h4>
-
+  <ul>
+    <li>Use an internet connection for the downloads and installation.</li>
+    <li>If you already use Anaconda, Miniconda, or Miniforge, ask the organizers whether you can use your existing installation before installing another copy.</li>
+    <li>Choose your operating system below and follow its steps in order. Use the Windows instructions unless you already work in Windows Subsystem for Linux (WSL).</li>
+    <li>We will use a folder called <code>lc-python</code> inside your home folder. This is a different location from the Desktop folder mentioned in the lesson's general setup page.</li>
+  </ul>
   <p>
-    Create a folder on your Desktop called <code>lc-python</code>. This will be your working folder for the lesson.
+    A <strong>terminal</strong> is a window where you type commands.
+    On Windows, use <strong>Miniforge Prompt</strong>; on macOS or Linux, use
+    <strong>Terminal</strong>. Copy one command line at a time and press
+    <kbd>Enter</kbd> (or <kbd>Return</kbd> on a Mac).
+    Wait until the prompt returns before entering the next command.
+    The prompt is the text or symbol beside the cursor when the terminal is ready
+    for another command. Do not copy prompt symbols such as <code>$</code> or <code>&gt;</code>.
   </p>
 
-  <pre><code>Desktop/
-└── lc-python/</code></pre>
-
   <div>
-    <ul class="nav nav-tabs os-tabs" role="tablist">
-      <li role="presentation" class="active"><a data-os="windows" href="#python-windows" role="tab" data-toggle="tab">Windows</a></li>
-      <li role="presentation"><a data-os="macos" href="#python-macos" role="tab" data-toggle="tab">MacOS</a></li>
-      <li role="presentation"><a data-os="linux" href="#python-linux" role="tab" data-toggle="tab">Linux / WSL</a></li>
+    <ul class="nav nav-tabs os-tabs" role="tablist" aria-label="Python setup by operating system">
+      <li role="presentation" class="active"><a id="python-windows-tab" data-os="windows" href="#python-windows" role="tab" data-toggle="tab" aria-controls="python-windows">Windows</a></li>
+      <li role="presentation"><a id="python-macos-tab" data-os="macos" href="#python-macos" role="tab" data-toggle="tab" aria-controls="python-macos">macOS</a></li>
+      <li role="presentation"><a id="python-linux-tab" data-os="linux" href="#python-linux" role="tab" data-toggle="tab" aria-controls="python-linux">Linux</a></li>
+      <li role="presentation"><a id="python-wsl-tab" href="#python-wsl" role="tab" data-toggle="tab" aria-controls="python-wsl">WSL (existing users)</a></li>
     </ul>
 
     <div class="tab-content">
-
-      <!-- WINDOWS -->
-      <article role="tabpanel" class="tab-pane active" id="python-windows">
-        <details>
-  <summary><strong>Windows note: Windows Defender blocking the installer</strong></summary>
-  <div class="alert alert-warning">
-    Windows may block the Miniforge installer with an "unrecognized app" warning and no option to run it anyway.
-
-    <p>To fix this:</p>
-    <ol>
-      <li>Right-click the downloaded <code>.exe</code> file and select <strong>Properties</strong>.</li>
-      <li>On the <strong>General</strong> tab, look for an <strong>Unblock</strong> checkbox at the bottom.</li>
-      <li>Check <strong>Unblock</strong>, click <strong>OK</strong>, then run the installer again.</li>
-    </ol>
-
-    <p>This is a common issue on managed Windows devices (including Windows 11 Education).</p>
-  </div>
-</details>
-
-        <details>
-  <summary><strong>Windows note: OneDrive users</strong></summary>
-  <div class="alert alert-warning">
-    If your Desktop or Documents folders are synced with OneDrive, you may run into issues creating the Python environment.
-
-    <ul>
-      <li>We recommend working in your <strong>Desktop</strong> folder for this workshop.</li>
-      <li>If you see errors during setup, OneDrive may be the cause.</li>
-      <li>If possible, make sure your Desktop is available locally on your machine.</li>
-    </ul>
-
-    <p>
-      If setup fails and you're not sure why, stop and we will help you during the workshop.
-    </p>
-  </div>
-</details>
+      <article role="tabpanel" class="tab-pane active" id="python-windows" aria-labelledby="python-windows-tab">
+        <h4>Windows</h4>
+        <h5>1. Install Miniforge</h5>
         <ol>
-          <li>Download and install Miniforge from <a href="https://conda-forge.org/download/">conda-forge.org/download</a>.</li>
-          <li>During installation, make sure to check <strong>Add Miniforge3 to my PATH environment variable</strong>.</li>
-
-          <li>
-            Download the
-            <a href="https://raw.githubusercontent.com/carpentries/workshop-template/refs/heads/gh-pages/data/carpentries_environment.yml">
-              carpentries_environment.yml
-            </a>
-            file and save it inside your <code>lc-python</code> folder on your Desktop.
-          </li>
-
-          <li>Open <strong>Miniforge Prompt</strong>.</li>
-
-          <li>Run the following commands:</li>
+          <li>Visit the <a href="https://conda-forge.org/download/">Miniforge download page</a> and choose <strong>Windows x86_64</strong>. These steps are for a Windows PC with an Intel or AMD processor. If your PC uses an ARM processor, contact the organizers for help choosing an installation route.</li>
+          <li>Open the downloaded <code>.exe</code> file. Read and accept the license, choose <strong>Just Me</strong>, and keep the default installation folder.</li>
+          <li>Keep <strong>Create start menu shortcuts</strong> selected. Leave <strong>Add Miniforge3 to my PATH environment variable</strong> unchecked. You will use Miniforge Prompt, so adding Miniforge to PATH is not needed.</li>
+          <li>Finish the installation. Open the Windows Start menu, search for <strong>Miniforge Prompt</strong>, and open it.</li>
+          <li>Check that conda is available:</li>
         </ol>
+        <pre><code>conda --version</code></pre>
+        <p>You should see <code>conda</code> followed by a version number. Your number may differ from examples you see elsewhere.</p>
 
-<pre><code>cd Desktop\lc-python
+        <h5>2. Prepare your workshop files</h5>
+        <ol>
+          <li>In File Explorer, click the address bar, type <code>%USERPROFILE%</code>, and press <kbd>Enter</kbd>. This opens your home folder.</li>
+          <li>Create a folder there called <code>lc-python</code>. If it already exists, use that folder.</li>
+          <li>Right-click <a href="https://raw.githubusercontent.com/carpentries/workshop-template/refs/heads/gh-pages/data/carpentries_environment.yml">carpentries_environment.yml</a> and choose <strong>Save link as</strong> (the wording varies by browser). Save it inside <code>lc-python</code>. If the save dialog offers a file type, choose <strong>All files</strong>. Keep the filename exactly <code>carpentries_environment.yml</code>, with no extra <code>.txt</code> extension.</li>
+          <li>Download the <a href="https://librarycarpentry.github.io/lc-python-intro/files/data.zip">lesson data ZIP file</a> and save it inside <code>lc-python</code>.</li>
+          <li>Right-click <code>data.zip</code> and choose <strong>Extract All</strong>. Set the destination to your <code>lc-python</code> folder. After extraction, that folder should contain a <code>data</code> folder with CSV files inside it. If extraction creates an extra enclosing folder, move the folder containing the CSV files into <code>lc-python</code> and name it <code>data</code>.</li>
+        </ol>
+        <p>Your <code>lc-python</code> folder should now contain <code>carpentries_environment.yml</code> and a <code>data</code> folder. It may also contain <code>data.zip</code>, which you can keep.</p>
+
+        <h5>3. Create the workshop environment</h5>
+        <p>Return to <strong>Miniforge Prompt</strong>. Run these commands one line at a time:</p>
+        <pre><code>cd /d "%USERPROFILE%\lc-python"
 conda env create -f carpentries_environment.yml</code></pre>
+        <p>This downloads and installs the workshop software. It may take several minutes and display many lines of text. Wait for the prompt to return. If you see an error, stop and use the troubleshooting section below.</p>
 
-        <ol start="6">
-          <li>Download the lesson <a href="https://librarycarpentry.github.io/lc-python-intro/files/data.zip">data zip file</a> and save it in <code>lc-python</code>.</li>
-          <li>Unzip the file. This should create a <code>data</code> folder.</li>
-        </ol>
-
-<pre><code>Desktop\
-└── lc-python\
-    ├── carpentries_environment.yml
-    └── data\</code></pre>
-
-        <ol start="8">
-          <li>Test that everything works:</li>
-        </ol>
-
-<pre><code>conda activate carpentries
+        <h5>4. Open JupyterLab</h5>
+        <pre><code>conda activate carpentries
 jupyter lab</code></pre>
+        <p>JupyterLab should open in your browser. Keep Miniforge Prompt open while you use it. Continue to <a href="#python-check">Check that setup works</a> below the tabs.</p>
 
-        <p>
-          JupyterLab should open in your browser. You should see the <code>data</code> folder on the left.
-        </p>
+        <h5>5. Open it again on workshop day</h5>
+        <p>Open <strong>Miniforge Prompt</strong> and run:</p>
+        <pre><code>cd /d "%USERPROFILE%\lc-python"
+conda activate carpentries
+jupyter lab</code></pre>
+        <p>You only need to create the environment once.</p>
       </article>
 
-      <!-- MAC -->
-      <article role="tabpanel" class="tab-pane" id="python-macos">
-
-        <details>
-  <summary><strong>Mac note: Which version to download?</strong></summary>
-  <div class="alert alert-info">
-    <p>Miniforge comes in two versions for Mac:</p>
-    <ul>
-      <li><strong>arm64 (Apple Silicon)</strong> — for Macs with an M1, M2, M3, or M4 chip (most Macs from late 2020 onward)</li>
-      <li><strong>x86_64 (Intel)</strong> — for older Intel Macs</li>
-    </ul>
-    <p>To check: click the Apple menu () &rarr; <strong>About This Mac</strong>. If you see "Apple M1" (or M2, M3, M4), choose <strong>arm64</strong>. If you see "Intel Core i…", choose <strong>x86_64</strong>.</p>
-  </div>
-</details>
-
+      <article role="tabpanel" class="tab-pane" id="python-macos" aria-labelledby="python-macos-tab">
+        <h4>macOS</h4>
+        <h5>1. Install Miniforge</h5>
         <ol>
-          <li>
-            Download the Miniforge installer for your Mac from
-            <a href="https://conda-forge.org/download/">conda-forge.org/download</a>.
-            You will get a file ending in <code>.sh</code> — this is a shell script, not a regular installer. Do not try to open it by double-clicking.
-          </li>
-
-          <li>Create a folder on your Desktop called <code>lc-python</code>.</li>
-
-          <li>
-            Download the
-            <a href="https://raw.githubusercontent.com/carpentries/workshop-template/refs/heads/gh-pages/data/carpentries_environment.yml">
-              carpentries_environment.yml
-            </a>
-            and save it in <code>~/Desktop/lc-python</code>.
-          </li>
-
-          <li>
-            Open <strong>Terminal</strong>. You can find it in <strong>Applications &rarr; Utilities</strong>, or press
-            <kbd>Command</kbd>+<kbd>Space</kbd> and type <em>Terminal</em>.
-          </li>
-
-          <li>Run the installer by typing the command below and pressing <kbd>Enter</kbd>:</li>
+          <li>Open the <strong>Apple menu &rarr; About This Mac</strong>. If you see an Apple M-series chip, choose <strong>arm64 (Apple Silicon)</strong> on the <a href="https://conda-forge.org/download/">Miniforge download page</a>. If you see an Intel processor, choose <strong>x86_64 (Intel)</strong>.</li>
+          <li>Save the installer in your <strong>Downloads</strong> folder. These instructions use the file ending in <code>.sh</code>, which you run in Terminal. If you downloaded a <code>.pkg</code> instead, use that installer's instructions or ask the organizers for help.</li>
+          <li>Open <strong>Terminal</strong>: press <kbd>Command</kbd>+<kbd>Space</kbd>, type <strong>Terminal</strong>, and press <kbd>Return</kbd>.</li>
+          <li>Run <strong>one</strong> of the commands below, matching the installer you downloaded.</li>
         </ol>
-
-<pre><code>bash ~/Downloads/Miniforge3*.sh</code></pre>
-
-        <p>Follow the prompts:</p>
+        <p><strong>Apple Silicon:</strong></p>
+        <pre><code>bash ~/Downloads/Miniforge3-MacOSX-arm64.sh</code></pre>
+        <p><strong>Intel:</strong></p>
+        <pre><code>bash ~/Downloads/Miniforge3-MacOSX-x86_64.sh</code></pre>
+        <p>Follow the installer prompts:</p>
         <ul>
-          <li>Press <kbd>Enter</kbd> or <kbd>Space</kbd> to scroll through the license, then type <code>yes</code> and press <kbd>Enter</kbd> to accept it.</li>
-          <li>Press <kbd>Enter</kbd> to accept the default install location (<code>~/miniforge3</code>).</li>
-          <li>Type <code>yes</code> when asked whether to initialize Miniforge3 — this lets your terminal find <code>conda</code> automatically.</li>
+          <li>Press <kbd>Return</kbd> to begin. Read the license, using <kbd>Space</kbd> to advance through it. Type <code>yes</code> and press <kbd>Return</kbd> to accept.</li>
+          <li>Press <kbd>Return</kbd> to accept the default installation location, <code>~/miniforge3</code>. The <code>~</code> symbol means your home folder.</li>
+          <li>Type <code>yes</code> when asked whether to initialize conda. This sets up your terminal to find conda.</li>
+          <li>When installation finishes, close the Terminal window and open a new one.</li>
         </ul>
+        <p>Check that conda is available:</p>
+        <pre><code>conda --version</code></pre>
+        <p>You should see <code>conda</code> followed by a version number.</p>
 
-        <ol start="6">
-          <li>
-            <strong>Close Terminal completely and open a new window.</strong>
-            This is required — conda will not work in the same window where you ran the installer.
-          </li>
-          <li>Verify the install worked:</li>
-        </ol>
-
-<pre><code>conda --version</code></pre>
-
-        <p>You should see something like <code>conda 24.x.x</code>. If you see <code>command not found</code>, see troubleshooting below.</p>
-
-        <ol start="8">
-          <li>Create the workshop environment:</li>
-        </ol>
-
-<pre><code>cd ~/Desktop/lc-python
-conda env create -f carpentries_environment.yml</code></pre>
-
-        <ol start="9">
-          <li>Download the <a href="https://librarycarpentry.github.io/lc-python-intro/files/data.zip">data zip file</a> and unzip it inside <code>lc-python</code>.</li>
-          <li>Test setup:</li>
-        </ol>
-
-<pre><code>conda activate carpentries
-jupyter lab</code></pre>
-
-        <p>You should see the <code>data</code> folder in JupyterLab.</p>
-      </article>
-
-      <!-- LINUX -->
-      <article role="tabpanel" class="tab-pane" id="python-linux">
-
-        <details>
-  <summary><strong>WSL note: your Downloads folder is in a different place</strong></summary>
-  <div class="alert alert-info">
-    <p>
-      If you are using Windows Subsystem for Linux (WSL), files you download in your Windows browser are not in <code>~/Downloads</code> inside WSL.
-      They are in your Windows user folder, accessible from WSL at:
-    </p>
-    <pre><code>/mnt/c/Users/&lt;your-windows-username&gt;/Downloads/</code></pre>
-    <p>
-      Replace <code>&lt;your-windows-username&gt;</code> with your actual Windows username when running the installer command in step 5 below.
-      We also recommend working from your Linux home directory (<code>~/lc-python</code>) rather than <code>~/Desktop</code>,
-      since the Desktop path in WSL varies by setup.
-    </p>
-  </div>
-</details>
-
+        <h5>2. Prepare your workshop files</h5>
         <ol>
-          <li>
-            Download the Miniforge installer for Linux from
-            <a href="https://conda-forge.org/download/">conda-forge.org/download</a>.
-            You will get a file ending in <code>.sh</code> — this is a shell script you will run in step 4.
-          </li>
-
-          <li>Create a working folder:</li>
+          <li>In Finder, choose <strong>Go &rarr; Home</strong>. Create a folder called <code>lc-python</code>. If it already exists, use that folder.</li>
+          <li>Control-click <a href="https://raw.githubusercontent.com/carpentries/workshop-template/refs/heads/gh-pages/data/carpentries_environment.yml">carpentries_environment.yml</a> and choose <strong>Download Linked File As</strong> or <strong>Save Link As</strong> (the wording varies by browser). Save it inside <code>lc-python</code>. Keep the filename exactly <code>carpentries_environment.yml</code>, with no extra <code>.txt</code> extension.</li>
+          <li>Download the <a href="https://librarycarpentry.github.io/lc-python-intro/files/data.zip">lesson data ZIP file</a> and save it inside <code>lc-python</code>.</li>
+          <li>Double-click <code>data.zip</code> to extract it. If your browser already extracted it in Downloads, move the resulting <code>data</code> folder into <code>lc-python</code>. Check that <code>data</code> contains CSV files.</li>
         </ol>
+        <p>Your <code>lc-python</code> folder should now contain <code>carpentries_environment.yml</code> and a <code>data</code> folder. It may also contain <code>data.zip</code>, which you can keep.</p>
 
-<pre><code>mkdir -p ~/Desktop/lc-python</code></pre>
-
-        <p><em>WSL users: use <code>mkdir -p ~/lc-python</code> instead.</em></p>
-
-        <ol start="3">
-          <li>
-            Download the
-            <a href="https://raw.githubusercontent.com/carpentries/workshop-template/refs/heads/gh-pages/data/carpentries_environment.yml">
-              carpentries_environment.yml
-            </a>
-            and save it in your <code>lc-python</code> folder.
-          </li>
-
-          <li>Open a terminal and run the installer:</li>
-        </ol>
-
-<pre><code>bash ~/Downloads/Miniforge3*.sh</code></pre>
-
-        <p><em>WSL users: replace <code>~/Downloads/</code> with <code>/mnt/c/Users/&lt;your-windows-username&gt;/Downloads/</code>.</em></p>
-
-        <p>Follow the prompts:</p>
-        <ul>
-          <li>Press <kbd>Enter</kbd> or <kbd>Space</kbd> to scroll through the license, then type <code>yes</code> and press <kbd>Enter</kbd> to accept it.</li>
-          <li>Press <kbd>Enter</kbd> to accept the default install location (<code>~/miniforge3</code>).</li>
-          <li>Type <code>yes</code> when asked whether to initialize Miniforge3.</li>
-        </ul>
-
-        <ol start="5">
-          <li>
-            <strong>Close your terminal and open a new one.</strong>
-            This is required — conda will not work in the same window where you ran the installer.
-          </li>
-          <li>Verify the install worked:</li>
-        </ol>
-
-<pre><code>conda --version</code></pre>
-
-        <p>You should see something like <code>conda 24.x.x</code>. If you see <code>command not found</code>, run <code>conda init bash</code> (or <code>conda init zsh</code> if you use zsh), then open a new terminal and try again.</p>
-
-        <ol start="7">
-          <li>Create the workshop environment:</li>
-        </ol>
-
-<pre><code>cd ~/Desktop/lc-python
+        <h5>3. Create the workshop environment</h5>
+        <p>In Terminal, run these commands one line at a time:</p>
+        <pre><code>cd ~/lc-python
 conda env create -f carpentries_environment.yml</code></pre>
+        <p>This downloads and installs the workshop software. It may take several minutes and display many lines of text. Wait for the prompt to return. If you see an error, stop and use the troubleshooting section below.</p>
 
-        <p><em>WSL users: replace the path with <code>~/lc-python</code>.</em></p>
-
-        <ol start="8">
-          <li>Download and unzip the <a href="https://librarycarpentry.github.io/lc-python-intro/files/data.zip">data zip file</a> into <code>lc-python</code>.</li>
-          <li>Test setup:</li>
-        </ol>
-
-<pre><code>conda activate carpentries
+        <h5>4. Open JupyterLab</h5>
+        <pre><code>conda activate carpentries
 jupyter lab</code></pre>
+        <p>JupyterLab should open in your browser. Keep Terminal open while you use it. Continue to <a href="#python-check">Check that setup works</a> below the tabs.</p>
 
-        <p>You should see the <code>data</code> folder in JupyterLab.</p>
+        <h5>5. Open it again on workshop day</h5>
+        <p>Open <strong>Terminal</strong> and run:</p>
+        <pre><code>cd ~/lc-python
+conda activate carpentries
+jupyter lab</code></pre>
+        <p>You only need to create the environment once.</p>
       </article>
 
+      <article role="tabpanel" class="tab-pane" id="python-linux" aria-labelledby="python-linux-tab">
+        <h4>Linux</h4>
+        <h5>1. Install Miniforge</h5>
+        <ol>
+          <li>Open your terminal application. Run the following command to check your computer's processor architecture:</li>
+        </ol>
+        <pre><code>uname -m</code></pre>
+        <ol start="2">
+          <li>Visit the <a href="https://conda-forge.org/download/">Miniforge download page</a>. Choose <strong>Linux x86_64</strong> if the command returned <code>x86_64</code>, or <strong>Linux aarch64</strong> if it returned <code>aarch64</code>. If you see another result, ask the organizers for help.</li>
+          <li>Save the <code>.sh</code> installer in your <strong>Downloads</strong> folder. Run <strong>one</strong> of the commands below, matching the installer you downloaded.</li>
+        </ol>
+        <p><strong>x86_64:</strong></p>
+        <pre><code>bash ~/Downloads/Miniforge3-Linux-x86_64.sh</code></pre>
+        <p><strong>aarch64:</strong></p>
+        <pre><code>bash ~/Downloads/Miniforge3-Linux-aarch64.sh</code></pre>
+        <p>Follow the installer prompts:</p>
+        <ul>
+          <li>Press <kbd>Enter</kbd> to begin. Read the license, using <kbd>Space</kbd> to advance through it. Type <code>yes</code> and press <kbd>Enter</kbd> to accept.</li>
+          <li>Press <kbd>Enter</kbd> to accept the default installation location, <code>~/miniforge3</code>. The <code>~</code> symbol means your home folder.</li>
+          <li>Type <code>yes</code> when asked whether to initialize conda.</li>
+          <li>When installation finishes, close the terminal window and open a new one.</li>
+        </ul>
+        <p>Check that conda is available:</p>
+        <pre><code>conda --version</code></pre>
+        <p>You should see <code>conda</code> followed by a version number.</p>
+
+        <h5>2. Prepare your workshop files</h5>
+        <ol>
+          <li>In your file manager, open your <strong>Home</strong> folder. Create a folder called <code>lc-python</code>. If it already exists, use that folder.</li>
+          <li>Right-click <a href="https://raw.githubusercontent.com/carpentries/workshop-template/refs/heads/gh-pages/data/carpentries_environment.yml">carpentries_environment.yml</a> and choose <strong>Save Link As</strong> (the wording varies by browser). Save it inside <code>lc-python</code>. Keep the filename exactly <code>carpentries_environment.yml</code>, with no extra <code>.txt</code> extension.</li>
+          <li>Download the <a href="https://librarycarpentry.github.io/lc-python-intro/files/data.zip">lesson data ZIP file</a> and save it inside <code>lc-python</code>.</li>
+          <li>Use your archive manager to extract <code>data.zip</code> into <code>lc-python</code>. Check that the resulting <code>data</code> folder contains CSV files. If extraction creates an extra enclosing folder, move the folder containing the CSV files into <code>lc-python</code> and name it <code>data</code>.</li>
+        </ol>
+        <p>Your <code>lc-python</code> folder should now contain <code>carpentries_environment.yml</code> and a <code>data</code> folder. It may also contain <code>data.zip</code>, which you can keep.</p>
+
+        <h5>3. Create the workshop environment</h5>
+        <p>In your terminal, run these commands one line at a time:</p>
+        <pre><code>cd ~/lc-python
+conda env create -f carpentries_environment.yml</code></pre>
+        <p>This downloads and installs the workshop software. It may take several minutes and display many lines of text. Wait for the prompt to return. If you see an error, stop and use the troubleshooting section below.</p>
+
+        <h5>4. Open JupyterLab</h5>
+        <pre><code>conda activate carpentries
+jupyter lab</code></pre>
+        <p>JupyterLab should open in your browser. Keep the terminal open while you use it. Continue to <a href="#python-check">Check that setup works</a> below the tabs.</p>
+
+        <h5>5. Open it again on workshop day</h5>
+        <p>Open your terminal and run:</p>
+        <pre><code>cd ~/lc-python
+conda activate carpentries
+jupyter lab</code></pre>
+        <p>You only need to create the environment once.</p>
+      </article>
+
+      <article role="tabpanel" class="tab-pane" id="python-wsl" aria-labelledby="python-wsl-tab">
+        <h4>Windows Subsystem for Linux (WSL)</h4>
+        <p>Use these steps only if WSL is already installed and you normally work in it. You do not need to install WSL for this workshop. Otherwise, use the Windows tab.</p>
+        <h5>1. Install Miniforge inside WSL</h5>
+        <ol>
+          <li>Open your WSL Linux terminal, such as <strong>Ubuntu</strong>, from the Windows Start menu. These commands belong in that Linux terminal.</li>
+          <li>Run the commands below one line at a time. They download the Linux installer into your Linux home folder and then run it. If <code>curl</code> is not available, stop and contact the organizers.</li>
+        </ol>
+        <pre><code>curl -fL "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-$(uname -m).sh" -o "$HOME/Miniforge3-WSL.sh"
+bash ~/Miniforge3-WSL.sh</code></pre>
+        <p>Follow the installer prompts:</p>
+        <ul>
+          <li>Press <kbd>Enter</kbd> to begin. Read the license, using <kbd>Space</kbd> to advance through it. Type <code>yes</code> and press <kbd>Enter</kbd> to accept.</li>
+          <li>Press <kbd>Enter</kbd> to accept the default installation location, <code>~/miniforge3</code>. The <code>~</code> symbol means your Linux home folder.</li>
+          <li>Type <code>yes</code> when asked whether to initialize conda.</li>
+          <li>When installation finishes, close the WSL terminal window and open a new one.</li>
+        </ul>
+        <p>Check that conda is available:</p>
+        <pre><code>conda --version</code></pre>
+        <p>You should see <code>conda</code> followed by a version number.</p>
+
+        <h5>2. Prepare your workshop files</h5>
+        <p>Run these commands one line at a time in WSL. They create your workshop folder and download the files directly into it, so you do not need to move files from Windows Downloads.</p>
+        <pre><code>mkdir -p ~/lc-python
+cd ~/lc-python
+curl -fL "https://raw.githubusercontent.com/carpentries/workshop-template/refs/heads/gh-pages/data/carpentries_environment.yml" -o carpentries_environment.yml
+curl -fL "https://librarycarpentry.github.io/lc-python-intro/files/data.zip" -o data.zip
+python -m zipfile -e data.zip .</code></pre>
+        <p>The final command extracts the ZIP file into the current folder. Check the contents:</p>
+        <pre><code>ls
+ls data</code></pre>
+        <p>The first command should list <code>carpentries_environment.yml</code> and <code>data</code>, along with <code>data.zip</code>. The second should list CSV files. If your folders differ, contact the organizers.</p>
+
+        <h5>3. Create the workshop environment</h5>
+        <pre><code>conda env create -f carpentries_environment.yml</code></pre>
+        <p>This downloads and installs the workshop software. It may take several minutes and display many lines of text. Wait for the prompt to return. If you see an error, stop and use the troubleshooting section below.</p>
+
+        <h5>4. Open JupyterLab</h5>
+        <pre><code>conda activate carpentries
+jupyter lab --no-browser</code></pre>
+        <p>Keep the WSL terminal open. Copy the complete address beginning with <code>http://localhost:</code> from the terminal into your Windows browser, including the part containing <code>token=</code>. This token grants access to your JupyterLab session; do not share it. Continue to <a href="#python-check">Check that setup works</a> below the tabs.</p>
+
+        <h5>5. Open it again on workshop day</h5>
+        <p>Open your WSL terminal and run:</p>
+        <pre><code>cd ~/lc-python
+conda activate carpentries
+jupyter lab --no-browser</code></pre>
+        <p>Use the new browser address printed in the terminal. You only need to create the environment once.</p>
+      </article>
     </div>
   </div>
 
-  <h4>Important</h4>
+  <h4 id="python-check">Check that setup works</h4>
+  <ol>
+    <li>In JupyterLab, find the file browser on the left. You should see your <code>data</code> folder. Double-click it and check that CSV files are inside, then return to <code>lc-python</code> using the folder path above the file list.</li>
+    <li>Choose <strong>File &rarr; New Launcher</strong>. Under <strong>Notebook</strong>, click <strong>Python 3</strong> (the label may also include <strong>ipykernel</strong>).</li>
+    <li>Click the first empty cell in the notebook and type the code below. Press <kbd>Shift</kbd>+<kbd>Enter</kbd> to run it.</li>
+  </ol>
+  <pre><code>import pandas as pd
+print("Setup works!")</code></pre>
+  <p>If you see <code>Setup works!</code> below the cell with no error, and you can see the lesson CSV files, your setup is ready.</p>
+  <p>Use the data downloaded here. These files were modified for teaching and may differ from versions linked from data.gov.</p>
 
-  <ul>
-    <li>If you see a <code>404</code> error, the environment file likely did not download correctly. Download it again.</li>
-    <li>If <code>conda activate carpentries</code> fails, the environment was not created successfully.</li>
-    <li>Please use the dataset provided here. It has been modified for teaching purposes and may differ from data.gov.</li>
-  </ul>
+  <h4>When you finish</h4>
+  <p>Save any notebook work with <kbd>Ctrl</kbd>+<kbd>S</kbd> (Windows or Linux) or <kbd>Command</kbd>+<kbd>S</kbd> (Mac). To stop JupyterLab, return to the terminal window where you started it and press <kbd>Ctrl</kbd>+<kbd>C</kbd>. If asked to shut down the server, type <code>y</code> and press <kbd>Enter</kbd>. You can then close the browser tab and terminal.</p>
 
   <h4>Troubleshooting</h4>
-
-  <ul>
-    <li>
-      <strong>Windows: Miniforge installer blocked by Windows Defender</strong> —
-      Right-click the <code>.exe</code> file, select <strong>Properties</strong>, and check the <strong>Unblock</strong> box at the bottom of the General tab. Click OK, then run the installer. This is common on managed Windows devices (including Windows 11 Education).
-    </li>
-    <li>
-      <strong><code>conda: command not found</code> after installing Miniforge</strong> —
-      Close your terminal completely and open a new one. On Mac, if the error persists, run
-      <code>conda init zsh</code> (or <code>conda init bash</code> if you use Bash), then open a new terminal window.
-    </li>
-    <li>
-      <strong>Windows: <code>conda</code> not recognized in Command Prompt or PowerShell</strong> —
-      Use <strong>Miniforge Prompt</strong> (installed with Miniforge), not the regular terminal.
-    </li>
-    <li>
-      <strong>Environment creation hangs at "Solving environment..."</strong> —
-      Run <code>conda config --set channel_priority strict</code>, then try creating the environment again.
-    </li>
-    <li>
-      <strong><code>jupyter lab</code> not found</strong> —
-      Make sure you ran <code>conda activate carpentries</code> first. If the problem continues, the environment may not have installed correctly.
-      Remove it with <code>conda env remove -n carpentries</code> and recreate it.
-    </li>
-    <li>
-      <strong>Mac (Apple Silicon)</strong> — Make sure you downloaded the <strong>arm64</strong> Miniforge installer from
-      <a href="https://conda-forge.org/download/">conda-forge.org/download</a>, not the x86_64 version.
-    </li>
-  </ul>
-
-  <p>
-    For additional common setup issues, see the
-    <a href="https://github.com/carpentries/workshop-template/wiki/Configuration-Problems-and-Solutions">Carpentries Configuration Problems and Solutions</a>
-    wiki. Note that some entries there predate Miniforge and may refer to Anaconda — the conda commands are the same.
-  </p>
+  <details>
+    <summary><strong>Windows blocks the installer</strong></summary>
+    <p>Check that you downloaded the installer from the official Miniforge download page linked above. Some downloaded files have an <strong>Unblock</strong> checkbox under <strong>right-click &rarr; Properties &rarr; General</strong>. If that option is present and your organization's rules permit it, select it and try again. This does not resolve every type of security block. If Windows says your organization or administrator has blocked the app, contact IT or the organizers for help.</p>
+  </details>
+  <details>
+    <summary><strong>The installer file cannot be found</strong></summary>
+    <p>Check where your browser saved the installer and whether its name matches the command. The macOS and Linux commands assume it is in your home folder's <code>Downloads</code> folder with its original filename. If your browser added a suffix such as <code>(1)</code>, the name will differ. Ask the organizers for help rather than repeatedly downloading the installer.</p>
+  </details>
+  <details>
+    <summary><strong>Windows says conda is not recognized</strong></summary>
+    <p>Open <strong>Miniforge Prompt</strong> from the Start menu and try <code>conda --version</code> there. The workshop commands are written for Miniforge Prompt.</p>
+  </details>
+  <details>
+    <summary><strong>macOS, Linux, or WSL says conda: command not found</strong></summary>
+    <p>First close the terminal window and open a new one. If the error continues and you accepted the default installation location, run the command for your shell below.</p>
+    <p><strong>macOS using the default zsh shell:</strong></p>
+    <pre><code>~/miniforge3/bin/conda init zsh</code></pre>
+    <p><strong>Linux or WSL using bash:</strong></p>
+    <pre><code>~/miniforge3/bin/conda init bash</code></pre>
+    <p>Then close the terminal window, open a new one, and try <code>conda --version</code> again. If you chose another installation folder, use another shell, or still see an error, contact the organizers.</p>
+  </details>
+  <details>
+    <summary><strong>The environment file cannot be found or read</strong></summary>
+    <p>Make sure you ran the <code>cd</code> command for your operating system and saved <code>carpentries_environment.yml</code> inside <code>lc-python</code>. Check for an extra extension such as <code>.txt</code>. If the download link shows <code>404 Not Found</code>, tell the organizers: the link needs checking. If you open the saved YAML file in a text editor, its first line should be <code>name: carpentries</code>, rather than a web page or error message.</p>
+  </details>
+  <details>
+    <summary><strong>Environment creation is slow or fails</strong></summary>
+    <p>Solving the environment and downloading packages can take several minutes. Wait for the prompt to return. If you receive an error, save the message and contact the organizers. If the message says an environment named <code>carpentries</code> already exists, ask us to check it before removing or replacing it.</p>
+  </details>
+  <details>
+    <summary><strong>conda activate carpentries fails, or jupyter lab is not found</strong></summary>
+    <p>Check which environments are available:</p>
+    <pre><code>conda env list</code></pre>
+    <p>If <code>carpentries</code> is listed, try <code>conda activate carpentries</code> again. After activation, an asterisk in the <code>conda env list</code> output should mark it as the active environment. If activation fails, the environment is missing, or JupyterLab still will not start, share the error with the organizers. Do not delete an existing environment to troubleshoot on your own.</p>
+  </details>
+  <details>
+    <summary><strong>JupyterLab does not open in a browser</strong></summary>
+    <p>Keep the terminal open. If it shows a web address beginning with <code>http://localhost:</code> or <code>http://127.0.0.1:</code>, copy the full address into your browser, including any <code>token=</code> portion. Do not share the token. If the browser still cannot connect, or the terminal shows an error instead of an address, contact the organizers.</p>
+  </details>
+  <details>
+    <summary><strong>JupyterLab opens, but the data folder is missing</strong></summary>
+    <p>You may have started JupyterLab from another folder. Stop it using the instructions above. Then follow <strong>Open it again on workshop day</strong> in your operating system's tab, including the <code>cd</code> command. If the folder is still missing, check that you extracted <code>data.zip</code> into <code>lc-python</code>.</p>
+  </details>
 </div>
